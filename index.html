@@ -13,6 +13,7 @@
       --light: #e0e0e0;
       --accent: #333;
       --card-bg: #2a2a2a;
+      --soft-black: #1f1f1f;
     }
 
     * {
@@ -33,7 +34,7 @@
     }
 
     header {
-      background-color: var(--dark);
+      background-color: var(--soft-black);
       padding: 1rem 0;
       position: sticky;
       top: 0;
@@ -166,7 +167,7 @@
     /* PRICING */
     .pricing {
       padding: 4rem 1rem;
-      background-color: var(--dark);
+      background-color: var(--soft-black);
       text-align: center;
     }
 
@@ -224,7 +225,7 @@
 
     /* FOOTER */
     footer {
-      background-color: var(--dark);
+      background-color: var(--soft-black);
       color: #888;
       text-align: center;
       padding: 2rem 1rem;
@@ -232,24 +233,34 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .navbar ul {
-        position: absolute;
-        right: 1rem;
-        top: 60px;
-        background-color: var(--dark);
+      .navbar {
         flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar ul {
+        position: static;
+        background-color: var(--soft-black);
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem 0;
         display: none;
-        width: 200px;
-        border-radius: 6px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.6);
       }
 
       .navbar ul.show {
         display: flex;
       }
 
+      .navbar li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+
       .menu-toggle {
         display: block;
+        align-self: flex-end;
       }
     }
   </style>
