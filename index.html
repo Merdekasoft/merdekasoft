@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>MerdekaSoft - Solusi Pengembangan Aplikasi Android untuk Perusahaan</title>
+<!-- Font Awesome CDN - simplified to ensure loading -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<style>
+  /* Reset dan dasar */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    line-height: 1.6;
+    color: #222;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative; /* Added for dropdown alignment */
+  }
+  /* Header */
+  header {
+    background-color: #111; /* soft black */
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 400; /* lighter font weight */
+    color: #eee;
+    font-size: 1.5rem;
+  }
+  .logo svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+    fill: #eee;
+  }
+  nav {
+    position: relative;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    font-weight: 400; /* lighter font weight */
+    font-size: 0.85rem;
+    color: #eee;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #fff;
+    outline: none;
+  }
+  /* Hamburger menu button */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #eee;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center center/cover;
+    padding: 4rem 1rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 480px;
+    color: #eee;
+  }
+  /* Overlay behind text for readability */
+  .hero-text-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 2rem 2.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .hero-text-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: none;
+    color: #eee;
+  }
+  .hero-text-overlay p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ddd;
+    margin-bottom: 2rem;
+    text-shadow: none;
+  }
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary {
+    background-color: #222;
+    color: white;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #000;
+    outline: none;
+  }
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #eee;
+    color: #eee;
+  }
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    background-color: #eee;
+    color: #222;
+    outline: none;
+  }
+  /* Features */
+  .features {
+    padding: 4rem 1rem 2rem;
+    background: #fafafa;
+  }
+  .features-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .feature-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .feature-item i {
+    color: #222;
+    font-size: 48px;
+    margin-bottom: 1rem;
+    width: 48px;
+    height: 48px;
+  }
+  .feature-item h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+  }
+  .feature-item p {
+    font-size: 1.05rem;
+    color: #555;
+    flex-grow: 1;
+  }
+  /* Pricing Section */
+  .pricing {
+    padding: 4rem 1rem 4rem;
+    background-color: #fff;
+    max-width: 1000px;
+    margin: 0 auto 6rem auto;
+    text-align: center;
+  }
+  .pricing h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+    font-weight: 700;
+  }
+  .pricing p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem;
+  }
+  .pricing-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .pricing-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .pricing-card h3 {
+    color: #222;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  .pricing-card .price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #222;
+    margin: 0.5rem 0 1rem;
+  }
+  .pricing-card ul {
+    text-align: left;
+    padding-left: 1.2rem;
+    color: #444;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+  .pricing-card ul li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  .pricing-card button {
+    align-self: center;
+    padding: 0.75rem 2rem;
+    background-color: #222;
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .pricing-card button:hover,
+  .pricing-card button:focus {
+    background-color: #000;
+    outline: none;
+  }
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #bbb;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+  footer .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  footer nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  footer nav ul li a {
+    color: #bbb;
+    transition: color 0.3s ease;
+  }
+  footer nav ul li a:hover,
+  footer nav ul li a:focus {
+    color: #fff;
+    outline: none;
+  }
+  /* Mobile Responsive */
+  @media (max-width: 600px) {
+    /* Show hamburger button */
+    .menu-toggle {
+      display: block;
+    }
+    /* Hide nav menu by default */
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 1rem; /* align with container padding */
+      background-color: #111;
+      width: 200px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1100;
+    }
+    nav ul.active {
+      display: flex;
+      animation: fadeIn 0.3s ease forwards;
+    }
+    nav ul li {
+      padding: 0;
+    }
+    nav ul li a {
+      padding: 0.75rem 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid #333;
+      display: block;
+    }
+    nav ul li:last-child a {
+      border-bottom: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero section adjustments */
+    .hero-text-overlay {
+      padding: 1.5rem 2rem;
+      max-width: 90%;
+    }
+    .hero-text-overlay h1 {
+      font-size: 1.8rem;
+    }
+    .hero-text-overlay p {
+      font-size: 1rem;
+    }
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+    }
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+    footer .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container navbar" role="banner">
+    <a href="#" class="logo" aria-label="Beranda MerdekaSoft">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" fill="#eee" />
+        <rect x="14" y="22" width="36" height="6" fill="white" />
+        <rect x="14" y="36" width="24" height="6" fill="white" />
+      </svg>
+      MerdekaSoft
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav role="navigation" aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Layanan</a></li>
+        <li><a href="#">Harga</a></li>
+        <li><a href="#">Integrasi</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" role="region" aria-label="Bagian utama">
+    <div class="hero-text-overlay">
+      <h1>Aplikasi Android Profesional untuk Perusahaan</h1>
+      <p>
+        Solusi kustom berkualitas tinggi dengan integrasi Google Drive gratis atau opsi VPS Linux dengan kontrol maksimal.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" type="button">Mulai Konsultasi</button>
+        <button class="btn btn-secondary" type="button">Minta Demo</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features container" role="region" aria-label="Fitur dan solusi">
+    <div class="features-grid">
+      <article class="feature-item" tabindex="0">
+        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+        <h3>Pengembangan Aplikasi Android Kustom</h3>
+        <p>
+          Solusi aplikasi yang disesuaikan dengan kebutuhan unik perusahaan Anda untuk mendukung proses bisnis yang optimal dan efektif.
+        </p>
+      </article>
+      <article class="feature-item" tabindex="0">
+        <i class="fas fa-cloud" aria-hidden="true"></i>
+        <h3>Integrasi Google Drive</h3>
+        <p>
+          Memanfaatkan Google Drive sebagai media penyimpanan tanpa biaya server, sehingga Anda dapat fokus pada pengembangan aplikasi tanpa mengkhawatirkan infrastruktur hosting.
+        </p>
+      </article>
+      <article class="feature-item" tabindex="0">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <h3>Hosting VPS Linux</h3>
+        <p>
+          Opsi hosting VPS berbasis Linux yang dapat disesuaikan untuk kebutuhan keamanan dan skalabilitas lebih tinggi, dengan biaya server terpisah sesuai paket yang Anda pilih.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="pricing" role="region" aria-label="Paket layanan dan harga">
+    <h2>Paket Layanan Kami</h2>
+    <p>
+      Pilih paket layanan yang paling sesuai dengan kebutuhan dan skala bisnis Anda.
+    </p>
+    <div class="pricing-grid">
+      <div class="pricing-card" tabindex="0">
+        <h3>Paket Integrasi Google Drive</h3>
+        <div class="price">Gratis</div>
+        <ul>
+          <li>Pengembangan aplikasi Android kustom</li>
+          <li>Integrasi langsung dengan Google Drive sebagai media penyimpanan</li>
+          <li>Hosting server gratis tanpa biaya tambahan</li>
+          <li>Dukungan teknis standar</li>
+          <li>Update dan pemeliharaan aplikasi terbatas</li>
+        </ul>
+        <button type="button">Pilih Paket</button>
+      </div>
+      <div class="pricing-card" tabindex="0">
+        <h3>Paket Hosting VPS Linux</h3>
+        <div class="price">Mulai Rp 500.000/bulan*</div>
+        <ul>
+          <li>Pengembangan aplikasi Android kustom dengan fitur lengkap</li>
+          <li>Hosting di VPS Linux dengan kontrol penuh atas server</li>
+          <li>Skalabilitas dan keamanan yang lebih baik</li>
+          <li>Dukungan teknis prioritas 24/7</li>
+          <li>Pemeliharaan, backup, dan update aplikasi berkala</li>
+          <li><em>*Biaya server VPS ditagihkan terpisah sesuai provider</em></li>
+        </ul>
+        <button type="button">Pilih Paket</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-container">
+    <nav aria-label="Navigasi footer">
+      <ul>
+        <li><a href="#">Privasi</a></li>
+        <li><a href="#">Ketentuan</a></li>
+        <li><a href="#">Dukungan</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2024 MerdekaSoft. Semua hak dilindungi undang-undang.</p>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navUl = document.querySelector('nav ul');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    navUl.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
