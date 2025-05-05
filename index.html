@@ -6,11 +6,12 @@
   <title>MerdekaSoft - Profesional Android Development</title>
   <style>
     :root {
-      --primary: #ff6600;
-      --secondary: #333;
-      --light: #fff;
-      --dark: #222;
-      --card-bg: #2a2a2a;
+      --primary: #ff6600; /* Oranye terang untuk warna utama */
+      --secondary: #222222; /* Abu-abu gelap untuk background */
+      --light: #ffffff; /* Putih untuk teks */
+      --dark: #111111; /* Hitam pekat untuk background utama */
+      --card-bg: #333333; /* Abu-abu untuk latar belakang kartu */
+      --hover-color: #e65500; /* Oranye lebih gelap untuk efek hover */
     }
 
     body {
@@ -27,7 +28,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
@@ -156,7 +159,7 @@
     }
 
     .btn:hover {
-      background: #e65500;
+      background: var(--hover-color);
     }
 
     .about-item ul {
