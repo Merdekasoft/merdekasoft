@@ -79,12 +79,13 @@
       font-weight: 500;
       position: relative;
       transition: var(--transition);
+      padding: 0.5rem 0;
     }
 
     nav a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
@@ -104,6 +105,8 @@
       display: none;
       cursor: pointer;
       font-size: 1.5rem;
+      color: var(--primary);
+      z-index: 1001;
     }
 
     /* Hero Section */
@@ -115,6 +118,7 @@
       margin-top: 5rem;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
 
     .hero-content {
@@ -137,6 +141,7 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.6;
+      color: #444;
     }
 
     .btn {
@@ -329,10 +334,6 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
     }
 
     .pricing-card.popular {
@@ -550,6 +551,8 @@
         gap: 2rem;
         transition: var(--transition);
         box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 2rem;
       }
 
       nav.active {
@@ -558,11 +561,11 @@
 
       .menu-toggle {
         display: block;
-        z-index: 1000;
       }
 
       .hero {
         text-align: center;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       }
 
       .hero-content {
@@ -576,7 +579,7 @@
       .btn-outline {
         margin-left: 0;
         margin-top: 1rem;
-        display: block;
+        display: inline-block;
       }
 
       .about-content {
@@ -603,6 +606,13 @@
 
       .section-title {
         font-size: 2rem;
+      }
+
+      .btn, .btn-outline {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
       }
     }
   </style>
@@ -637,7 +647,7 @@
         <a href="#about" class="btn btn-outline">Pelajari Lebih</a>
       </div>
     </div>
-    <img src="https://assets.materialup.com/uploads/4b19d6a1-4b8a-4f8b-8e5e-9c2c8b6b6b6b/screenshot.jpg" alt="Linux and Android Development" class="hero-image">
+    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Linux and Android Development" class="hero-image">
   </section>
 
   <!-- Features Section -->
@@ -681,7 +691,7 @@
           <p>Kami menggabungkan filosofi open-source dengan pendekatan bisnis modern untuk menciptakan produk yang benar-benar bermanfaat bagi klien kami.</p>
         </div>
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Our Team">
         </div>
       </div>
     </div>
@@ -819,6 +829,14 @@
         '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
+    // Close menu when clicking on nav links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -832,12 +850,6 @@
             top: target.offsetTop - 80,
             behavior: 'smooth'
           });
-          
-          // Close mobile menu if open
-          if(nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-          }
         }
       });
     });
