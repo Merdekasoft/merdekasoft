@@ -1,14 +1,183 @@
-        .cta p {
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Modern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS yang kamu buat sebelumnya dimasukkan di sini */
+        :root {
+            --primary: #0067B8;
+            --primary-dark: #005aa3;
+            --secondary: #FFB900;
+            --dark: #323130;
+            --light: #F3F2F1;
+            --gray: #E1DFDD;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+            padding-top: 70px;
+        }
+
+        .ms-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            top: 0;
+            left: 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .nav-links li {
+            margin: 0 12px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-button {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-button-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .nav-button-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .nav-button-secondary {
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .nav-button-secondary:hover {
+            background-color: rgba(0, 103, 184, 0.05);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
-            font-size: 1.1rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary);
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
             padding: 12px 24px;
             border-radius: 4px;
             font-weight: 600;
@@ -16,20 +185,271 @@
             transition: all 0.3s;
         }
 
-        .cta-button:hover {
+        .hero-button-primary {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .hero-button-primary:hover {
             background-color: #e6e6e6;
             transform: translateY(-2px);
         }
 
-        /* Footer */
-        .footer {
-            background-color: var(--dark);
+        .hero-button-secondary {
+            background-color: transparent;
             color: var(--white);
-            padding: 40px 20px;
+            border: 2px solid var(--white);
+        }
+
+        .hero-button-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .products, .features, .testimonials {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .product-grid, .feature-grid, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card, .feature-card, .testimonial-card {
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: var(--white);
+            transition: all 0.3s;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover, .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info, .feature-card, .testimonial-card {
+            padding: 20px;
+        }
+
+        .product-info h3, .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .product-info p, .feature-card p, .testimonial-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+        }
+
+        .author-info p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .cta {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: var(--white);
             text-align: center;
         }
 
-        .footer p {
-            font-size: 14px;
-            opacity: 0.7;
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta .hero-button-primary {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="ms-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100x24?text=LOGO" alt="Logo">
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Fitur</a></li>
+                    <li><a href="#">Testimoni</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#" class="nav-button nav-button-secondary">Masuk</a>
+                    <a href="#" class="nav-button nav-button-primary">Daftar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Selamat Datang di Website Kami</h1>
+            <p>Kami menyediakan solusi terbaik untuk kebutuhan digital dan teknologi Anda.</p>
+            <div class="hero-buttons">
+                <a href="#" class="hero-button hero-button-primary">Mulai Sekarang</a>
+                <a href="#" class="hero-button hero-button-secondary">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Produk Unggulan</h2>
+                <p>Temukan berbagai produk berkualitas yang dirancang untuk Anda.</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image"><img src="https://via.placeholder.com/300x180" alt="Produk 1"></div>
+                    <div class="product-info">
+                        <h3>Produk 1</h3>
+                        <p>Deskripsi singkat tentang produk ini.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="https://via.placeholder.com/300x180" alt="Produk 2"></div>
+                    <div class="product-info">
+                        <h3>Produk 2</h3>
+                        <p>Deskripsi singkat tentang produk ini.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Fitur Unggulan</h2>
+                <p>Kami memberikan fitur terbaik untuk menunjang kebutuhan Anda.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="https://via.placeholder.com/30" alt="Fitur"></div>
+                    <h3>Keamanan Tinggi</h3>
+                    <p>Kami mengutamakan privasi dan keamanan data Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="https://via.placeholder.com/30" alt="Fitur"></div>
+                    <h3>Antarmuka Mudah</h3>
+                    <p>Dirancang agar mudah digunakan oleh siapa saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Apa Kata Mereka</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Layanannya sangat membantu dan tim support-nya ramah."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://via.placeholder.com/50" alt="User"></div>
+                        <div class="author-info">
+                            <h4>Rina</h4>
+                            <p>Pengusaha</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Sangat puas dengan fitur yang tersedia!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://via.placeholder.com/50" alt="User"></div>
+                        <div class="author-info">
+                            <h4>Andi</h4>
+                            <p>Desainer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Siap Meningkatkan Bisnismu?</h2>
+        <p>Gabung sekarang dan rasakan kemudahan bersama kami.</p>
+        <a href="#" class="hero-button hero-button-primary">Daftar Sekarang</a>
+    </section>
+
+</body>
+</html>
