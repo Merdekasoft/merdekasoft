@@ -3,441 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Modern</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* CSS yang kamu buat sebelumnya dimasukkan di sini */
-        :root {
-            --primary: #0067B8;
-            --primary-dark: #005aa3;
-            --secondary: #FFB900;
-            --dark: #323130;
-            --light: #F3F2F1;
-            --gray: #E1DFDD;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-color: var(--white);
-            padding-top: 70px;
-        }
-
-        .ms-header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            padding: 10px 0;
-            top: 0;
-            left: 0;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo img {
-            height: 24px;
-            width: auto;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin-right: 20px;
-        }
-
-        .nav-links li {
-            margin: 0 12px;
-            position: relative;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-size: 15px;
-            font-weight: 500;
-            padding: 8px 0;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-button {
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 10px;
-            transition: all 0.3s;
-        }
-
-        .nav-button-primary {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .nav-button-primary:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .nav-button-secondary {
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        .nav-button-secondary:hover {
-            background-color: rgba(0, 103, 184, 0.05);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 120px 0 80px;
-            text-align: center;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .hero-button {
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .hero-button-primary {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .hero-button-primary:hover {
-            background-color: #e6e6e6;
-            transform: translateY(-2px);
-        }
-
-        .hero-button-secondary {
-            background-color: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .hero-button-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .products, .features, .testimonials {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .product-grid, .feature-grid, .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card, .feature-card, .testimonial-card {
-            border: 1px solid var(--gray);
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: var(--white);
-            transition: all 0.3s;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-        }
-
-        .product-card:hover, .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .product-image {
-            height: 180px;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info, .feature-card, .testimonial-card {
-            padding: 20px;
-        }
-
-        .product-info h3, .feature-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .product-info p, .feature-card p, .testimonial-text {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            font-size: 1rem;
-        }
-
-        .author-info p {
-            font-size: 13px;
-            color: #777;
-        }
-
-        .cta {
-            padding: 80px 0;
-            background-color: var(--primary);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .cta .hero-button-primary {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-    </style>
+    <title>MerdekaSoft | Solusi Teknologi Open-Source Indonesia</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <!-- Header -->
     <header class="ms-header">
         <div class="header-container">
             <div class="logo">
-                <img src="https://via.placeholder.com/100x24?text=LOGO" alt="Logo">
+                <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=Merdekasoft" alt="MerdekaSoft">
             </div>
+            
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="#">Beranda</a></li>
                     <li><a href="#">Produk</a></li>
-                    <li><a href="#">Fitur</a></li>
-                    <li><a href="#">Testimoni</a></li>
+                    <li><a href="#">Solusi</a></li>
+                    <li><a href="#">Dukungan</a></li>
+                    <li><a href="#">Tentang</a></li>
                 </ul>
+                
                 <div class="nav-buttons">
                     <a href="#" class="nav-button nav-button-secondary">Masuk</a>
-                    <a href="#" class="nav-button nav-button-primary">Daftar</a>
+                    <a href="#" class="nav-button nav-button-primary">Unduh</a>
                 </div>
             </nav>
+            
+            <button class="mobile-menu-btn">&#9776;</button>
         </div>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#">Produk</a></li>
+            <li><a href="#">Solusi</a></li>
+            <li><a href="#">Dukungan</a></li>
+            <li><a href="#">Tentang</a></li>
+        </ul>
+        <div class="mobile-nav-buttons">
+            <a href="#" class="mobile-nav-button nav-button-secondary">Masuk</a>
+            <a href="#" class="mobile-nav-button nav-button-primary">Unduh</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <h1>Selamat Datang di Website Kami</h1>
-            <p>Kami menyediakan solusi terbaik untuk kebutuhan digital dan teknologi Anda.</p>
+            <h1>Teknologi Open-Source untuk Indonesia Merdeka</h1>
+            <p>MerdekaSoft menghadirkan solusi sistem operasi dan pengembangan software berkualitas dengan filosofi Beautiful, Effective, Efficient.</p>
             <div class="hero-buttons">
-                <a href="#" class="hero-button hero-button-primary">Mulai Sekarang</a>
-                <a href="#" class="hero-button hero-button-secondary">Pelajari Lebih Lanjut</a>
+                <a href="#" class="hero-button hero-button-primary">Unduh BEE OS</a>
+                <a href="#" class="hero-button hero-button-secondary">Lihat Produk Lainnya</a>
             </div>
         </div>
     </section>
 
+    <!-- Products Section -->
     <section class="products">
         <div class="section-container">
             <div class="section-title">
-                <h2>Produk Unggulan</h2>
-                <p>Temukan berbagai produk berkualitas yang dirancang untuk Anda.</p>
+                <h2>Produk Unggulan Kami</h2>
+                <p>Solusi teknologi terbaik untuk kebutuhan pribadi, pendidikan, dan bisnis</p>
             </div>
+            
             <div class="product-grid">
+                <!-- BEE OS -->
                 <div class="product-card">
-                    <div class="product-image"><img src="https://via.placeholder.com/300x180" alt="Produk 1"></div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BEE OS">
+                    </div>
                     <div class="product-info">
-                        <h3>Produk 1</h3>
-                        <p>Deskripsi singkat tentang produk ini.</p>
+                        <h3>BEE OS</h3>
+                        <p>Sistem operasi modern untuk semua kebutuhan, dari rumahan hingga enterprise.</p>
+                        <a href="#" class="product-link">Pelajari lebih lanjut <span>→</span></a>
                     </div>
                 </div>
+                
+                <!-- Android Development -->
                 <div class="product-card">
-                    <div class="product-image"><img src="https://via.placeholder.com/300x180" alt="Produk 2"></div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Android Development">
+                    </div>
                     <div class="product-info">
-                        <h3>Produk 2</h3>
-                        <p>Deskripsi singkat tentang produk ini.</p>
+                        <h3>Pengembangan Android</h3>
+                        <p>Jasa pembuatan aplikasi Android kustom untuk bisnis dan instansi.</p>
+                        <a href="#" class="product-link">Pelajari lebih lanjut <span>→</span></a>
+                    </div>
+                </div>
+                
+                <!-- Training -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pelatihan">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pelatihan Teknologi</h3>
+                        <p>Program pelatihan open-source dan pengembangan software.</p>
+                        <a href="#" class="product-link">Pelajari lebih lanjut <span>→</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="features">
         <div class="section-container">
             <div class="section-title">
-                <h2>Fitur Unggulan</h2>
-                <p>Kami memberikan fitur terbaik untuk menunjang kebutuhan Anda.</p>
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Keunggulan yang membuat MerdekaSoft berbeda</p>
             </div>
+            
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon"><img src="https://via.placeholder.com/30" alt="Fitur"></div>
-                    <h3>Keamanan Tinggi</h3>
-                    <p>Kami mengutamakan privasi dan keamanan data Anda.</p>
+                    <div class="feature-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Open Source">
+                    </div>
+                    <h3>Open Source</h3>
+                    <p>Produk kami berbasis open-source dengan komunitas yang aktif dan berkembang.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon"><img src="https://via.placeholder.com/30" alt="Fitur"></div>
-                    <h3>Antarmuka Mudah</h3>
-                    <p>Dirancang agar mudah digunakan oleh siapa saja.</p>
+                    <div class="feature-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Lokal">
+                    </div>
+                    <h3>Made in Indonesia</h3>
+                    <p>Dibangun oleh developer lokal untuk kebutuhan pasar Indonesia.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936777.png" alt="Support">
+                    </div>
+                    <h3>Dukungan Penuh</h3>
+                    <p>Tim support siap membantu 24/7 untuk solusi enterprise.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="section-container">
             <div class="section-title">
-                <h2>Apa Kata Mereka</h2>
+                <h2>Apa Kata Mereka?</h2>
+                <p>Testimoni dari pelanggan dan mitra kami</p>
             </div>
+            
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Layanannya sangat membantu dan tim support-nya ramah."</p>
+                    <p class="testimonial-text">"BEE OS telah membantu sekolah kami beralih ke platform open-source dengan mudah. Antarmukanya sangat user-friendly untuk guru dan siswa."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://via.placeholder.com/50" alt="User"></div>
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Dewi Sari">
+                        </div>
                         <div class="author-info">
-                            <h4>Rina</h4>
-                            <p>Pengusaha</p>
+                            <h4>Dewi Sari</h4>
+                            <p>Kepala Sekolah SMPN 5 Jakarta</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Sangat puas dengan fitur yang tersedia!"</p>
+                    <p class="testimonial-text">"Tim MerdekaSoft membantu kami mengembangkan aplikasi inventory yang sangat membantu operasional bisnis kami sehari-hari."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://via.placeholder.com/50" alt="User"></div>
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso">
+                        </div>
                         <div class="author-info">
-                            <h4>Andi</h4>
-                            <p>Desainer</p>
+                            <h4>Budi Santoso</h4>
+                            <p>Direktur CV Maju Jaya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Migrasi ke BEE OS Pro memberikan stabilitas dan keamanan yang kami butuhkan untuk operasional perusahaan. Support timnya sangat responsif."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anita Wijaya">
+                        </div>
+                        <div class="author-info">
+                            <h4>Anita Wijaya</h4>
+                            <p>CTO FinTech Startup</p>
                         </div>
                     </div>
                 </div>
@@ -445,11 +197,86 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta">
-        <h2>Siap Meningkatkan Bisnismu?</h2>
-        <p>Gabung sekarang dan rasakan kemudahan bersama kami.</p>
-        <a href="#" class="hero-button hero-button-primary">Daftar Sekarang</a>
+        <div class="section-container">
+            <h2>Siap Beralih ke Solusi Open-Source?</h2>
+            <p>Mulai perjalanan digital Anda dengan produk dan layanan terbaik dari MerdekaSoft</p>
+            <a href="#" class="cta-button">Hubungi Kami Sekarang</a>
+        </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=MerdekaSoft" alt="MerdekaSoft">
+                </div>
+                <div class="footer-about">
+                    <p>MerdekaSoft merupakan perusahaan teknologi Indonesia yang berfokus pada pengembangan solusi open-source untuk berbagai kebutuhan.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="16">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="16">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="16">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" width="16">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Produk</h3>
+                <ul class="footer-links">
+                    <li><a href="#">BEE OS Home</a></li>
+                    <li><a href="#">BEE OS Edu</a></li>
+                    <li><a href="#">BEE OS Pro</a></li>
+                    <li><a href="#">Unduhan</a></li>
+                    <li><a href="#">Harga</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Pengembangan Aplikasi</a></li>
+                    <li><a href="#">Pelatihan Teknologi</a></li>
+                    <li><a href="#">Konsultasi IT</a></li>
+                    <li><a href="#">Migrasi Sistem</a></li>
+                    <li><a href="#">Dukungan Teknis</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Perusahaan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Kontak</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 MerdekaSoft. Hak Cipta Dilindungi.</p>
+            <ul class="footer-links-horizontal">
+                <li><a href="#">Syarat Penggunaan</a></li>
+                <li><a href="#">Kebijakan Privasi</a></li>
+                <li><a href="#">Cookie</a></li>
+                <li><a href="#">Peta Situs</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
