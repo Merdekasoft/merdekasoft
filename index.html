@@ -1,282 +1,847 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MerdekaSoft | Solusi Teknologi Open-Source Indonesia</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merdekasoft - Solusi Teknologi dan Edukasi untuk Indonesia</title>
+  <style>
+    /* Modern Reset & Base Styles */
+    :root {
+      --primary: #0078D4;
+      --primary-dark: #106EBE;
+      --secondary: #50E6FF;
+      --dark: #201F1E;
+      --light: #FFFFFF;
+      --gray: #F3F2F1;
+      --gray-dark: #E1DFDD;
+      --text: #323130;
+      --text-light: #605E5C;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* Header - Microsoft-style */
+    header {
+      background-color: var(--light);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo img {
+      height: 32px;
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-menu li {
+      position: relative;
+    }
+    
+    .nav-menu a {
+      display: block;
+      padding: 20px 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .nav-menu a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--primary);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 400px;
+      height: 100vh;
+      background-color: var(--light);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      transition: right 0.3s ease;
+      padding: 80px 30px 30px;
+      overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+      right: 0;
+    }
+    
+    .mobile-menu ul {
+      list-style: none;
+    }
+    
+    .mobile-menu li {
+      margin-bottom: 20px;
+    }
+    
+    .mobile-menu a {
+      display: block;
+      padding: 10px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--gray-dark);
+    }
+    
+    .mobile-menu a:hover {
+      color: var(--primary);
+    }
+    
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Hero Section - Microsoft-style */
+    .hero {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background-color: var(--light);
+      color: var(--primary);
+      border: 2px solid var(--light);
+    }
+    
+    .btn-primary:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--light);
+      border: 2px solid var(--light);
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+    
+    /* Product Cards */
+    .products-section {
+      padding: 80px 0;
+      background-color: var(--gray);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+    
+    .section-header p {
+      font-size: 1.125rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-light);
+    }
+    
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .product-card {
+      background-color: var(--light);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+    }
+    
+    .product-image {
+      height: 180px;
+      background-color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+    
+    .product-content {
+      padding: 24px;
+    }
+    
+    .product-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    
+    .product-content p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    
+    /* Features Section */
+    .features-section {
+      padding: 80px 0;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature-item {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .feature-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    .feature-text h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .feature-text p {
+      color: var(--text-light);
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 80px 0;
+      background-color: var(--primary);
+      color: var(--light);
+    }
+    
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    
+    .about-content h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    
+    .about-content p {
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+    
+    .about-image {
+      background-color: var(--light);
+      height: 400px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 60px 0 20px;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .footer-logo-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--light);
+    }
+    
+    .footer-about p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+    }
+    
+    .footer-links h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--light);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-links a:hover {
+      color: var(--light);
+      text-decoration: underline;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        order: -1;
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      /* Header */
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      /* Hero */
+      .hero {
+        padding: 60px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      /* Sections */
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .section-header p {
+        font-size: 1rem;
+      }
+      
+      /* Product Cards */
+      .product-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Features */
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .about-content h2 {
+        font-size: 2rem;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="ms-header">
-        <div class="header-container">
-            <div class="logo">
+
+  <header>
+    <div class="container header-container">
+        <div class="logo">
                 <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=Merdekasoft" alt="MerdekaSoft">
             </div>
-            
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#">Produk</a></li>
-                    <li><a href="#">Solusi</a></li>
-                    <li><a href="#">Dukungan</a></li>
-                    <li><a href="#">Tentang</a></li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <a href="#" class="nav-button nav-button-secondary">Masuk</a>
-                    <a href="#" class="nav-button nav-button-primary">Unduh</a>
-                </div>
-            </nav>
-            
-            <button class="mobile-menu-btn">&#9776;</button>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-nav-links">
-            <li><a href="#">Produk</a></li>
-            <li><a href="#">Solusi</a></li>
-            <li><a href="#">Dukungan</a></li>
-            <li><a href="#">Tentang</a></li>
+       
+      
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="#products">Produk</a></li>
+          <li><a href="#solutions">Solusi</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#contact">Kontak</a></li>
         </ul>
-        <div class="mobile-nav-buttons">
-            <a href="#" class="mobile-nav-button nav-button-secondary">Masuk</a>
-            <a href="#" class="mobile-nav-button nav-button-primary">Unduh</a>
-        </div>
+      </nav>
+      
+      <div class="menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <h1>Beautiful, Effective, Efficient.</h1>
-            <p>Solusi Open-Source Modern dari Indonesia, untuk Dunia.</p>
-            <div class="hero-buttons">
-                <a href="#" class="hero-button hero-button-primary">Unduh BEE OS</a>
-                <a href="#" class="hero-button hero-button-secondary">Lihat Produk Lainnya</a>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#products">Produk</a></li>
+      <li><a href="#solutions">Solusi</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </div>
+  
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Teknologi untuk Pendidikan Indonesia</h1>
+      <p>Merdekasoft menghadirkan solusi sistem operasi, aplikasi edukasi, dan platform pembelajaran yang dirancang khusus untuk kebutuhan lokal Indonesia.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">Jelajahi Produk</a>
+        <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products-section">
+    <div class="section-header">
+      <h2>Produk Kami</h2>
+      <p>Solusi teknologi yang dirancang untuk mendukung pendidikan dan pemerintahan di seluruh Indonesia</p>
+    </div>
+    <div class="product-cards">
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H20V16H4V4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 16V20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-content">
+          <h3>BEE OS</h3>
+          <p>Sistem operasi berbasis Linux dengan antarmuka KDE yang familiar, optimasi untuk hardware lokal, dan dukungan aplikasi pendidikan.</p>
+          <a href="#">Pelajari lebih lanjut →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 16V12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 8H12.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-content">
+          <h3>Distribusi Offline</h3>
+          <p>Paket aplikasi dan pembaruan yang dapat diinstal tanpa koneksi internet, ideal untuk daerah dengan infrastruktur terbatas.</p>
+          <a href="#">Pelajari lebih lanjut →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="product-content">
+          <h3>Game Edukasi "Jelajah"</h3>
+          <p>Platform pembelajaran interaktif berbasis mobile dengan fitur augmented reality dan konten lokal yang menarik.</p>
+          <a href="#">Pelajari lebih lanjut →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions" class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Solusi untuk Institusi Pendidikan</h2>
+        <p>Dukung transformasi digital sekolah dan universitas dengan teknologi yang terjangkau</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">1</div>
+          <div class="feature-text">
+            <h3>Lab Komputer Lengkap</h3>
+            <p>Sistem operasi dan aplikasi pendidikan siap pakai untuk laboratorium komputer sekolah.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">2</div>
+          <div class="feature-text">
+            <h3>Pelatihan Guru</h3>
+            <p>Program pelatihan untuk meningkatkan kompetensi digital pendidik.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">3</div>
+          <div class="feature-text">
+            <h3>Konten Lokal</h3>
+            <p>Materi pembelajaran yang relevan dengan kurikulum dan budaya Indonesia.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">4</div>
+          <div class="feature-text">
+            <h3>Dukungan Teknis</h3>
+            <p>Tim support siap membantu implementasi teknologi di institusi Anda.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">5</div>
+          <div class="feature-text">
+            <h3>Manajemen Sekolah</h3>
+            <p>Aplikasi untuk administrasi dan manajemen operasional sekolah.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">6</div>
+          <div class="feature-text">
+            <h3>Pembelajaran Jarak Jauh</h3>
+            <p>Solusi untuk sekolah yang membutuhkan sistem pembelajaran hybrid.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container about-container">
+      <div class="about-content">
+        <h2>Tentang Merdekasoft</h2>
+        <p>Merdekasoft didirikan pada tahun 2025 dengan misi untuk menyediakan solusi teknologi yang terjangkau dan relevan untuk kebutuhan pendidikan dan pemerintahan di Indonesia.</p>
+        <p>Kami percaya bahwa setiap sekolah dan instansi pemerintah berhak memiliki akses ke teknologi yang mendukung proses belajar mengajar dan operasional sehari-hari, tanpa terkendala biaya lisensi atau infrastruktur internet.</p>
+        <p>Dengan tim yang terdiri dari engineer, pendidik, dan ahli konten lokal, kami mengembangkan produk yang benar-benar memahami kebutuhan pengguna Indonesia.</p>
+      </div>
+      <div class="about-image">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#0078D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8V12L15 15" stroke="#0078D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container footer-container">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <div class="logo">
+                <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=Merdekasoft" alt="MerdekaSoft">
             </div>
         </div>
-    </section>
+        <p>Membangun teknologi untuk kemandirian digital Indonesia.</p>
+        <p style="margin-top: 20px;">
+          <strong>Email:</strong> info@merdekasoft.id<br>
+          <strong>Telepon:</strong> +62 851-7171-8710
+        </p>
+      </div>
+      <div class="footer-links">
+        <h3>Produk</h3>
+        <ul>
+          <li><a href="#">BEE OS</a></li>
+          <li><a href="#">Distribusi Offline</a></li>
+          <li><a href="#">Game Edukasi</a></li>
+          <li><a href="#">Aplikasi Pendidikan</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Perusahaan</h3>
+        <ul>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Partner</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Dukungan</h3>
+        <ul>
+          <li><a href="#">Dokumentasi</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Kontak</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2025 Merdekasoft. Semua hak dilindungi. | <a href="#">Kebijakan Privasi</a> | <a href="#">Syarat Penggunaan</a></p>
+    </div>
+  </footer>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Produk Unggulan Kami</h2>
-                <p>Solusi teknologi terbaik untuk kebutuhan pribadi, pendidikan, dan bisnis</p>
-            </div>
-            
-            <div class="product-grid">
-                <!-- BEE OS -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BEE OS">
-                    </div>
-                    <div class="product-info">
-                        <h3>BEE OS</h3>
-                        <p>Sistem operasi modern untuk semua kebutuhan, dari rumahan hingga enterprise.</p>
-                        <a href="#" class="product-link">Pelajari lebih lanjut <span>→</span></a>
-                    </div>
-                </div>
-                
-                <!-- Android Development -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Android Development">
-                    </div>
-                    <div class="product-info">
-                        <h3>Pengembangan Android</h3>
-                        <p>Jasa pembuatan aplikasi Android kustom untuk bisnis dan instansi.</p>
-                        <a href="#" class="product-link">Pelajari lebih lanjut <span>→</span></a>
-                    </div>
-                </div>
-                
-                <!-- Training -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pelatihan">
-                    </div>
-                    <div class="product-info">
-                        <h3>Pelatihan Teknologi</h3>
-                        <p>Program pelatihan open-source dan pengembangan software.</p>
-                        <a href="#" class="product-link">Pelajari lebih lanjut <span>→</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Mengapa Memilih Kami?</h2>
-                <p>Keunggulan yang membuat MerdekaSoft berbeda</p>
-            </div>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Open Source">
-                    </div>
-                    <h3>Open Source</h3>
-                    <p>Produk kami berbasis open-source dengan komunitas yang aktif dan berkembang.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Lokal">
-                    </div>
-                    <h3>Made in Indonesia</h3>
-                    <p>Dibangun oleh developer lokal untuk kebutuhan pasar Indonesia.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936777.png" alt="Support">
-                    </div>
-                    <h3>Dukungan Penuh</h3>
-                    <p>Tim support siap membantu 24/7 untuk solusi enterprise.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Apa Kata Mereka?</h2>
-                <p>Testimoni dari pelanggan dan mitra kami</p>
-            </div>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"BEE OS telah membantu sekolah kami beralih ke platform open-source dengan mudah. Antarmukanya sangat user-friendly untuk guru dan siswa."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Dewi Sari">
-                        </div>
-                        <div class="author-info">
-                            <h4>Dewi Sari</h4>
-                            <p>Kepala Sekolah SMPN 5 Jakarta</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Tim MerdekaSoft membantu kami mengembangkan aplikasi inventory yang sangat membantu operasional bisnis kami sehari-hari."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso">
-                        </div>
-                        <div class="author-info">
-                            <h4>Budi Santoso</h4>
-                            <p>Direktur CV Maju Jaya</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Migrasi ke BEE OS Pro memberikan stabilitas dan keamanan yang kami butuhkan untuk operasional perusahaan. Support timnya sangat responsif."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anita Wijaya">
-                        </div>
-                        <div class="author-info">
-                            <h4>Anita Wijaya</h4>
-                            <p>CTO FinTech Startup</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="section-container">
-            <h2>Siap Beralih ke Solusi Open-Source?</h2>
-            <p>Mulai perjalanan digital Anda dengan produk dan layanan terbaik dari MerdekaSoft</p>
-            <a href="#" class="cta-button">Hubungi Kami Sekarang</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-logo">
-                    <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=MerdekaSoft" alt="MerdekaSoft">
-                </div>
-                <div class="footer-about">
-                    <p>MerdekaSoft merupakan perusahaan teknologi Indonesia yang berfokus pada pengembangan solusi open-source untuk berbagai kebutuhan.</p>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="16">
-                    </a>
-                    <a href="#" class="social-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="16">
-                    </a>
-                    <a href="#" class="social-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="16">
-                    </a>
-                    <a href="#" class="social-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" width="16">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Produk</h3>
-                <ul class="footer-links">
-                    <li><a href="#">BEE OS Home</a></li>
-                    <li><a href="#">BEE OS Edu</a></li>
-                    <li><a href="#">BEE OS Pro</a></li>
-                    <li><a href="#">Unduhan</a></li>
-                    <li><a href="#">Harga</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Layanan</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Pengembangan Aplikasi</a></li>
-                    <li><a href="#">Pelatihan Teknologi</a></li>
-                    <li><a href="#">Konsultasi IT</a></li>
-                    <li><a href="#">Migrasi Sistem</a></li>
-                    <li><a href="#">Dukungan Teknis</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Perusahaan</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Tentang Kami</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Karir</a></li>
-                    <li><a href="#">Kontak</a></li>
-                    <li><a href="#">Kebijakan Privasi</a></li>
-                </ul>
-            </div>
-        </div>
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    
+    mobileMenuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      
+      // Toggle hamburger to X
+      const spans = this.querySelectorAll('span');
+      if (this.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        spans[0].style.transform = 'rotate(0) translate(0, 0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0, 0)';
+      }
+    });
+    
+    // Close menu when clicking on overlay
+    menuOverlay.addEventListener('click', function() {
+      mobileMenuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      this.classList.remove('active');
+      
+      // Reset hamburger icon
+      const spans = mobileMenuToggle.querySelectorAll('span');
+      spans[0].style.transform = 'rotate(0) translate(0, 0)';
+      spans[1].style.opacity = '1';
+      spans[2].style.transform = 'rotate(0) translate(0, 0)';
+    });
+    
+    // Close menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
         
-        <div class="footer-bottom">
-            <p>&copy; 2025 MerdekaSoft. Hak Cipta Dilindungi.</p>
-            <ul class="footer-links-horizontal">
-                <li><a href="#">Syarat Penggunaan</a></li>
-                <li><a href="#">Kebijakan Privasi</a></li>
-                <li><a href="#">Cookie</a></li>
-                <li><a href="#">Peta Situs</a></li>
-            </ul>
-        </div>
-    </footer>
+        // Reset hamburger icon
+        const spans = mobileMenuToggle.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0) translate(0, 0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0, 0)';
+      });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
-    <script src="script.js"></script>
 </body>
 </html>
