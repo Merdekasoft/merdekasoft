@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Merdekasoft - Solusi Teknologi dan Edukasi untuk Indonesia</title>
+  <title>MerdekaSoft - Solusi Teknologi dan Edukasi untuk Indonesia</title>
   <style>
     /* Modern Reset & Base Styles */
     :root {
@@ -70,17 +70,11 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      height: 40px;
     }
     
     .logo img {
-      height: 32px;
-    }
-    
-    .logo-text {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--primary);
+      height: 100%;
     }
     
     /* Navigation */
@@ -119,6 +113,7 @@
       height: 21px;
       cursor: pointer;
       z-index: 101;
+      position: relative;
     }
     
     .menu-toggle span {
@@ -187,6 +182,19 @@
     .menu-overlay.active {
       opacity: 1;
       visibility: visible;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 102;
     }
     
     /* Hero Section - Microsoft-style */
@@ -429,14 +437,12 @@
     .footer-logo {
       display: flex;
       align-items: center;
-      gap: 8px;
       margin-bottom: 16px;
+      height: 40px;
     }
     
-    .footer-logo-text {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--light);
+    .footer-logo img {
+      height: 100%;
     }
     
     .footer-about p {
@@ -551,6 +557,10 @@
       .footer-container {
         grid-template-columns: 1fr;
       }
+      
+      .mobile-menu {
+        width: 85%;
+      }
     }
   </style>
 </head>
@@ -558,10 +568,9 @@
 
   <header>
     <div class="container header-container">
-        <div class="logo">
-                <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=Merdekasoft" alt="MerdekaSoft">
-            </div>
-       
+      <div class="logo">
+        <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png" alt="BEE OS Logo">
+      </div>
       
       <nav class="desktop-nav">
         <ul class="nav-menu">
@@ -582,6 +591,7 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
+    <button class="close-btn" id="close-btn">&times;</button>
     <ul>
       <li><a href="#products">Produk</a></li>
       <li><a href="#solutions">Solusi</a></li>
@@ -595,7 +605,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Teknologi untuk Pendidikan Indonesia</h1>
-      <p>Merdekasoft menghadirkan solusi sistem operasi, aplikasi edukasi, dan platform pembelajaran yang dirancang khusus untuk kebutuhan lokal Indonesia.</p>
+      <p>MerdekaSoft menghadirkan solusi sistem operasi, aplikasi edukasi, dan platform pembelajaran yang dirancang khusus untuk kebutuhan lokal Indonesia.</p>
       <div class="hero-buttons">
         <a href="#products" class="btn btn-primary">Jelajahi Produk</a>
         <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
@@ -710,8 +720,8 @@
   <section id="about" class="about-section">
     <div class="container about-container">
       <div class="about-content">
-        <h2>Tentang Merdekasoft</h2>
-        <p>Merdekasoft didirikan pada tahun 2025 dengan misi untuk menyediakan solusi teknologi yang terjangkau dan relevan untuk kebutuhan pendidikan dan pemerintahan di Indonesia.</p>
+        <h2>Tentang MerdekaSoft</h2>
+        <p>MerdekaSoft didirikan pada tahun 2025 dengan misi untuk menyediakan solusi teknologi yang terjangkau dan relevan untuk kebutuhan pendidikan dan pemerintahan di Indonesia.</p>
         <p>Kami percaya bahwa setiap sekolah dan instansi pemerintah berhak memiliki akses ke teknologi yang mendukung proses belajar mengajar dan operasional sehari-hari, tanpa terkendala biaya lisensi atau infrastruktur internet.</p>
         <p>Dengan tim yang terdiri dari engineer, pendidik, dan ahli konten lokal, kami mengembangkan produk yang benar-benar memahami kebutuhan pengguna Indonesia.</p>
       </div>
@@ -728,9 +738,7 @@
     <div class="container footer-container">
       <div class="footer-about">
         <div class="footer-logo">
-          <div class="logo">
-                <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png?text=Merdekasoft" alt="MerdekaSoft">
-            </div>
+          <img src="https://raw.githubusercontent.com/Merdekasoft/merdekasoft/refs/heads/main/logo.png" alt="BEE OS Logo">
         </div>
         <p>Membangun teknologi untuk kemandirian digital Indonesia.</p>
         <p style="margin-top: 20px;">
@@ -767,7 +775,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>&copy; 2025 Merdekasoft. Semua hak dilindungi. | <a href="#">Kebijakan Privasi</a> | <a href="#">Syarat Penggunaan</a></p>
+      <p>&copy; 2025 MerdekaSoft. Semua hak dilindungi. | <a href="#">Kebijakan Privasi</a> | <a href="#">Syarat Penggunaan</a></p>
     </div>
   </footer>
 
@@ -776,15 +784,16 @@
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuOverlay = document.getElementById('menu-overlay');
+    const closeBtn = document.getElementById('close-btn');
     
-    mobileMenuToggle.addEventListener('click', function() {
-      this.classList.toggle('active');
+    function toggleMenu() {
+      mobileMenuToggle.classList.toggle('active');
       mobileMenu.classList.toggle('active');
       menuOverlay.classList.toggle('active');
       
       // Toggle hamburger to X
-      const spans = this.querySelectorAll('span');
-      if (this.classList.contains('active')) {
+      const spans = mobileMenuToggle.querySelectorAll('span');
+      if (mobileMenuToggle.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -793,35 +802,30 @@
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'rotate(0) translate(0, 0)';
       }
-    });
+    }
     
-    // Close menu when clicking on overlay
-    menuOverlay.addEventListener('click', function() {
+    function closeMenu() {
       mobileMenuToggle.classList.remove('active');
       mobileMenu.classList.remove('active');
-      this.classList.remove('active');
+      menuOverlay.classList.remove('active');
       
       // Reset hamburger icon
       const spans = mobileMenuToggle.querySelectorAll('span');
       spans[0].style.transform = 'rotate(0) translate(0, 0)';
       spans[1].style.opacity = '1';
       spans[2].style.transform = 'rotate(0) translate(0, 0)';
-    });
+    }
+    
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    
+    // Close menu when clicking on overlay
+    menuOverlay.addEventListener('click', closeMenu);
     
     // Close menu when clicking on a link
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
     mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        mobileMenuToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        
-        // Reset hamburger icon
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'rotate(0) translate(0, 0)';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'rotate(0) translate(0, 0)';
-      });
+      link.addEventListener('click', closeMenu);
     });
     
     // Smooth scrolling for anchor links
