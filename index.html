@@ -3,62 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merdekasoft.id - Jasa Pembuatan Chatbot Profesional</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>MerdekaSoft.id - Beautiful Effect Efficient Freedom</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --palestine-black: #000000;
+            --palestine-white: #FFFFFF;
+            --palestine-green: #007A3D;
+            --palestine-red: #CE1126;
         }
         
         body {
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
             color: #333;
-            background-color: #f9f9f9;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
+            background-color: var(--palestine-white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
         
-        nav {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 10px 24px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
         }
         
-        .logo span {
-            color: var(--secondary);
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--palestine-black), var(--palestine-green), var(--palestine-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .nav-links {
@@ -67,45 +60,34 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 20px;
         }
         
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: #262626;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 15px;
         }
         
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--palestine-red);
         }
         
-        .cta-button {
-            background-color: var(--secondary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #2980b9;
-            color: white;
-        }
-        
-        /* Hero Section */
         .hero {
-            padding: 150px 0 100px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
+            padding: 120px 24px;
             text-align: center;
         }
         
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
+            font-weight: 600;
         }
         
         .hero p {
@@ -114,676 +96,266 @@
             margin: 0 auto 30px;
         }
         
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .slogan {
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--palestine-white);
+            background-color: var(--palestine-red);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
         }
         
         .btn {
+            display: inline-block;
             padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary {
-            background-color: white;
-            color: var(--secondary);
-        }
-        
-        .btn-primary:hover {
-            background-color: #f8f9fa;
-            transform: translateY(-3px);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
+            background-color: var(--palestine-green);
             color: white;
-            border: 2px solid white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
         
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
+        .btn:hover {
+            background-color: var(--palestine-black);
         }
         
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: white;
+        .products {
+            max-width: 1600px;
+            margin: 60px auto;
+            padding: 0 24px;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: var(--palestine-black);
+            position: relative;
         }
         
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary);
-            margin-bottom: 15px;
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--palestine-black), var(--palestine-green), var(--palestine-red));
+            margin: 10px auto 0;
         }
         
-        .section-title p {
-            color: #7f8c8d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features-grid {
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .feature-card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
+        .product-card {
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        .feature-icon {
-            font-size: 50px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-        
-        .step {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 50%;
+        .product-image {
+            height: 180px;
+            background-color: #f3f3f3;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 auto 20px;
+            background-size: cover;
+            background-position: center;
         }
         
-        .step h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
+        .product-info {
+            padding: 20px;
         }
         
-        .step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            right: -50px;
-            width: 100px;
-            height: 2px;
-            background-color: var(--secondary);
-            opacity: 0.3;
+        .product-info h3 {
+            margin-top: 0;
+            color: var(--palestine-green);
         }
         
-        /* Pricing */
-        .pricing {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .pricing-card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pricing-card.popular {
-            border: 2px solid var(--secondary);
-            position: relative;
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background-color: var(--accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+        .product-info p {
+            color: #666;
             font-size: 14px;
+        }
+        
+        .learn-more {
+            color: var(--palestine-red);
+            text-decoration: none;
             font-weight: 600;
-        }
-        
-        .pricing-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        .price {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .price span {
-            font-size: 16px;
-            font-weight: normal;
-            color: #7f8c8d;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-        
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: #7f8c8d;
             font-size: 14px;
+            display: inline-block;
+            margin-top: 15px;
         }
         
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--palestine-black);
             color: white;
-            padding: 60px 0 20px;
+            padding: 40px 24px;
         }
         
         .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
         }
         
-        .footer-column h3 {
-            font-size: 18px;
+        .footer-column h4 {
+            color: var(--palestine-white);
+            margin-top: 0;
             margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary);
+            font-size: 16px;
         }
         
         .footer-column ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
         
-        .footer-column ul li {
+        .footer-column li {
             margin-bottom: 10px;
         }
         
-        .footer-column ul li a {
-            color: #bdc3c7;
+        .footer-column a {
+            color: #adadad;
             text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc3c7;
             font-size: 14px;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .step:not(:last-child)::after {
-                display: none;
-            }
-            
-            .step {
-                margin-bottom: 40px;
-            }
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            max-width: 1600px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 12px;
+            color: #adadad;
+            text-align: center;
+        }
+        
+        .palestine-flag {
+            height: 20px;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Merdeka<span>Soft</span></div>
-                <ul class="nav-links">
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#features">Fitur</a></li>
-                    <li><a href="#how-it-works">Cara Kerja</a></li>
-                    <li><a href="#pricing">Harga</a></li>
-                    <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#contact" class="cta-button">Kontak Kami</a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/30x30/007A3D/FFFFFF?text=MS" alt="MerdekaSoft Logo">
+                <span class="logo-text">MerdekaSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Produk</a></li>
+                <li><a href="#">Solusi</a></li>
+                <li><a href="#">Sumber Daya</a></li>
+                <li><a href="#">Dukungan</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+            </ul>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Solusi Chatbot Canggih untuk Bisnis Anda</h1>
-            <p>Kami membantu bisnis Anda tumbuh dengan chatbot AI yang cerdas, responsif, dan mudah dikelola. Tingkatkan layanan pelanggan dan efisiensi operasional Anda sekarang juga.</p>
-            <div class="hero-buttons">
-                <a href="#pricing" class="btn btn-primary">Lihat Paket</a>
-                <a href="#contact" class="btn btn-secondary">Konsultasi Gratis</a>
-            </div>
-        </div>
+    
+    <section class="hero">
+        <div class="slogan">Beautiful Effect Efficient Freedom</div>
+        <h1>Linux untuk Semua</h1>
+        <p>MerdekaSoft menghadirkan solusi open-source berbasis Linux yang powerful, indah, dan membebaskan - seperti semangat kemerdekaan Palestina yang tak pernah padam.</p>
+        <a href="#" class="btn">Unduh Sekarang</a>
     </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mengapa Memilih Chatbot Kami?</h2>
-                <p>Kami menawarkan solusi chatbot terintegrasi dengan fitur-fitur unggulan yang akan membawa bisnis Anda ke level berikutnya.</p>
+    
+    <section class="products">
+        <h2 class="section-title">Produk Kami</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-info">
+                    <h3>MerdekaOS</h3>
+                    <p>Distro Linux modern dengan antarmuka yang indah dan performa tinggi, dibangun untuk produktivitas dan kreativitas.</p>
+                    <a href="#" class="learn-more">Pelajari lebih lanjut →</a>
+                </div>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI Canggih</h3>
-                    <p>Chatbot kami didukung oleh teknologi AI terbaru yang mampu memahami dan merespons percakapan secara alami.</p>
+            
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-info">
+                    <h3>Freedom Office</h3>
+                    <p>Suite produktivitas lengkap yang kompatibel dengan semua format dokumen populer, 100% gratis dan open-source.</p>
+                    <a href="#" class="learn-more">Pelajari lebih lanjut →</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Integrasi Mudah</h3>
-                    <p>Terintegrasi dengan berbagai platform populer seperti WhatsApp, Facebook Messenger, Website, dan banyak lagi.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Analitik Lengkap</h3>
-                    <p>Dapatkan wawasan mendalam tentang interaksi pelanggan dengan dashboard analitik kami yang komprehensif.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-                    <h3>Customizable</h3>
-                    <p>Chatbot yang sepenuhnya dapat disesuaikan dengan merek dan kebutuhan spesifik bisnis Anda.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Dukungan 24/7</h3>
-                    <p>Tim support kami siap membantu Anda kapan saja dengan respon cepat dan solusi tepat.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Keamanan Data</h3>
-                    <p>Data pelanggan Anda aman dengan sistem enkripsi tingkat tinggi dan perlindungan privasi.</p>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-info">
+                    <h3>Liberty Dev Tools</h3>
+                    <p>Kumpulan alat pengembangan terintegrasi untuk membangun aplikasi modern dengan kebebasan sejati.</p>
+                    <a href="#" class="learn-more">Pelajari lebih lanjut →</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>Bagaimana Cara Kerjanya?</h2>
-                <p>Hanya dalam 4 langkah sederhana, chatbot siap membantu bisnis Anda</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Konsultasi Kebutuhan</h3>
-                    <p>Kami memahami kebutuhan bisnis Anda melalui sesi konsultasi gratis.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Desain & Pengembangan</h3>
-                    <p>Tim kami merancang dan mengembangkan chatbot sesuai spesifikasi Anda.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Testing & Penyempurnaan</h3>
-                    <p>Chatbot diuji secara menyeluruh dan disempurnakan berdasarkan feedback.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Peluncuran & Dukungan</h3>
-                    <p>Chatbot siap diluncurkan dengan dukungan penuh dari tim kami.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h2>Paket Harga</h2>
-                <p>Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Dasar</h3>
-                    <div class="price">Rp 1,5jt<span>/bulan</span></div>
-                    <ul class="pricing-features">
-                        <li>Chatbot Dasar</li>
-                        <li>Integrasi 1 Platform</li>
-                        <li>50 Interaksi/hari</li>
-                        <li>Dukungan via Email</li>
-                        <li>Basic Analytics</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Pilih Paket</a>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge">Populer</div>
-                    <h3>Profesional</h3>
-                    <div class="price">Rp 3,5jt<span>/bulan</span></div>
-                    <ul class="pricing-features">
-                        <li>Chatbot AI Canggih</li>
-                        <li>Integrasi 3 Platform</li>
-                        <li>200 Interaksi/hari</li>
-                        <li>Dukungan Prioritas</li>
-                        <li>Advanced Analytics</li>
-                        <li>Pelatihan Dasar</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Pilih Paket</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">Rp 7jt<span>/bulan</span></div>
-                    <ul class="pricing-features">
-                        <li>Chatbot Custom AI</li>
-                        <li>Integrasi Unlimited</li>
-                        <li>1000+ Interaksi/hari</li>
-                        <li>Dukungan 24/7</li>
-                        <li>Custom Analytics</li>
-                        <li>Pelatihan Lengkap</li>
-                        <li>Dedicated Account Manager</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Pilih Paket</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Apa Kata Klien Kami?</h2>
-                <p>Berikut testimoni dari klien yang telah menggunakan layanan kami</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Chatbot dari Merdekasoft telah membantu kami meningkatkan respon ke pelanggan hingga 80%. Layanan pelanggan kami sekarang berjalan 24/7 tanpa hambatan."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso">
-                        </div>
-                        <div class="author-info">
-                            <h4>Budi Santoso</h4>
-                            <p>Direktur, PT Retail Maju</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Tim Merdekasoft sangat profesional dalam mengembangkan chatbot untuk bisnis travel kami. Hasilnya melebihi ekspektasi dan mudah dikelola."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dewi Lestari">
-                        </div>
-                        <div class="author-info">
-                            <h4>Dewi Lestari</h4>
-                            <p>CEO, Tour & Travel Bahagia</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Dalam 3 bulan setelah menggunakan chatbot ini, konversi penjualan kami meningkat 35%. Investasi yang sangat worth it untuk bisnis e-commerce kami."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Agus Wijaya">
-                        </div>
-                        <div class="author-info">
-                            <h4>Agus Wijaya</h4>
-                            <p>Founder, TokoOnlineku.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Siap Meningkatkan Bisnis Anda dengan Chatbot?</h2>
-            <p>Hubungi kami sekarang untuk konsultasi gratis dan temukan solusi chatbot terbaik untuk kebutuhan bisnis Anda.</p>
-            <a href="mailto:info@merdekasoft.id" class="btn btn-primary">Email Kami</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Tentang Kami</h3>
-                    <p>Merdekasoft.id adalah penyedia jasa pembuatan chatbot profesional dengan pengalaman melayani berbagai bisnis di Indonesia.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <ul>
-                        <li><a href="#">Pembuatan Chatbot</a></li>
-                        <li><a href="#">Integrasi Platform</a></li>
-                        <li><a href="#">Pelatihan Chatbot</a></li>
-                        <li><a href="#">Maintenance</a></li>
-                        <li><a href="#">Konsultasi Gratis</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Link Cepat</h3>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#features">Fitur</a></li>
-                        <li><a href="#how-it-works">Cara Kerja</a></li>
-                        <li><a href="#pricing">Harga</a></li>
-                        <li><a href="#testimonials">Testimoni</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Kontak</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@merdekasoft.id</li>
-                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Apa's Baru</h4>
+                <ul>
+                    <li><a href="#">MerdekaOS 2.0</a></li>
+                    <li><a href="#">Freedom Office Update</a></li>
+                    <li><a href="#">Rilis Terbaru</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Merdekasoft.id. All Rights Reserved.</p>
+            
+            <div class="footer-column">
+                <h4>Komunitas</h4>
+                <ul>
+                    <li><a href="#">Forum Pengguna</a></li>
+                    <li><a href="#">Kontribusi</a></li>
+                    <li><a href="#">Acara</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-column">
+                <h4>Dukungan</h4>
+                <ul>
+                    <li><a href="#">Bantuan</a></li>
+                    <li><a href="#">Dokumentasi</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="#">Visi Misi</a></li>
+                    <li><a href="#">Tim</a></li>
+                    <li><a href="#">Karier</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 MerdekaSoft.id - Beautiful Effect Efficient Freedom 
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/1200px-Flag_of_Palestine.svg.png" alt="Palestine Flag" class="palestine-flag">
+            #FreePalestine
         </div>
     </footer>
 </body>
