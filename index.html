@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MerdekaSoft.id - Beautiful Effect Efficient Freedom</title>
+    <link rel="icon" href="icon.png" type="image/png">
     <style>
         :root {
             --palestine-black: #000000;
@@ -12,11 +13,16 @@
             --palestine-red: #CE1126;
         }
         
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
+            line-height: 1.6;
         }
         
         header {
@@ -57,6 +63,8 @@
         .nav-links {
             display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .nav-links li {
@@ -74,30 +82,36 @@
             color: var(--palestine-red);
         }
         
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 24px;
+            padding: 80px 24px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             font-weight: 600;
         }
         
         .hero p {
-            font-size: 20px;
+            font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
         
         .slogan {
-            font-size: 28px;
+            font-size: 1.75rem;
             font-weight: 300;
             color: var(--palestine-white);
             background-color: var(--palestine-red);
@@ -115,7 +129,7 @@
             text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 1rem;
             transition: background-color 0.3s;
         }
         
@@ -131,7 +145,7 @@
         
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 2rem;
             margin-bottom: 40px;
             color: var(--palestine-black);
             position: relative;
@@ -181,18 +195,19 @@
         .product-info h3 {
             margin-top: 0;
             color: var(--palestine-green);
+            font-size: 1.25rem;
         }
         
         .product-info p {
             color: #666;
-            font-size: 14px;
+            font-size: 0.875rem;
         }
         
         .learn-more {
             color: var(--palestine-red);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 0.875rem;
             display: inline-block;
             margin-top: 15px;
         }
@@ -215,7 +230,7 @@
             color: var(--palestine-white);
             margin-top: 0;
             margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 1rem;
         }
         
         .footer-column ul {
@@ -231,7 +246,7 @@
         .footer-column a {
             color: #adadad;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.875rem;
         }
         
         .footer-column a:hover {
@@ -244,7 +259,7 @@
             margin: 30px auto 0;
             padding-top: 20px;
             border-top: 1px solid #444;
-            font-size: 12px;
+            font-size: 0.75rem;
             color: #adadad;
             text-align: center;
         }
@@ -255,15 +270,81 @@
             margin-left: 10px;
             vertical-align: middle;
         }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .slogan {
+                font-size: 1.25rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+            
+            .logo-text {
+                font-size: 18px;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo">
-                <img src="https://via.placeholder.com/30x30/007A3D/FFFFFF?text=MS" alt="MerdekaSoft Logo">
+                <img src="icon.png" alt="MerdekaSoft Logo">
                 <span class="logo-text">MerdekaSoft</span>
             </div>
+            <div class="menu-toggle">☰</div>
             <ul class="nav-links">
                 <li><a href="#">Produk</a></li>
                 <li><a href="#">Solusi</a></li>
@@ -358,5 +439,19 @@
             #FreePalestine
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
