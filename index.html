@@ -4,536 +4,399 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merdekasoft.id - Jasa Pembuatan Chatbot Profesional</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        /* Root Variables */
-:root {
-    --primary: #2c3e50;
-    --secondary: #3498db;
-    --accent: #e74c3c;
-    --light: #ecf0f1;
-    --dark: #2c3e50;
-}
+        /* CSS Dasar untuk menyerupai gaya Microsoft.com */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f2f2f2; /* Warna latar belakang umum */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0078D4; /* Warna biru khas Microsoft */
+            text-decoration: none;
+        }
+        header .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        header .nav-links a:hover {
+            color: #0078D4;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1500x600/0078D4/FFFFFF?text=Solusi+Chatbot+Terdepan') no-repeat center center/cover; /* Placeholder gambar hero */
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Overlay gelap */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            background-color: #0078D4;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #005a9e;
+        }
 
-/* Reset and Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        .section {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-top: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+            font-weight: 600;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .feature-item {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .feature-item h3 {
+            color: #0078D4;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .feature-item p {
+            font-size: 16px;
+            color: #555;
+        }
 
-body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
+        .call-to-action {
+            background-color: #005a9e; /* Warna biru gelap */
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 30px;
+        }
+        .call-to-action h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .call-to-action p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        footer h4 {
+            color: #eee;
+            margin-bottom: 15px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        footer ul li a:hover {
+            color: #0078D4;
+        }
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
 
-/* Header */
-header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.logo span {
-    color: var(--secondary);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--secondary);
-}
-
-.cta-button {
-    background-color: #3498db;
-    color: white;
-    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
-}
-
-/* Hero Section */
-.hero {
-    padding: 150px 0 100px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn {
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.btn-primary {
-    background-color: white;
-    color: var(--secondary);
-}
-
-.btn-primary:hover {
-    background-color: #f8f9fa;
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
-}
-
-/* Features Section */
-.features {
-    padding: 80px 0;
-    background-color: white;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title h2 {
-    font-size: 36px;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-.section-title p {
-    color: #7f8c8d;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-    font-size: 50px;
-    color: var(--secondary);
-    margin-bottom: 20px;
-}
-
-.feature-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark);
-    color: white;
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-column h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--secondary);
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-    text-decoration: none;
-    color: #ecf0f1;
-    transition: color 0.3s;
-}
-
-.footer-column ul li a:hover {
-    color: var(--secondary);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    font-size: 14px;
-    color: #ccc;
-}
-
+        /* Responsive */
+        @media (max-width: 768px) {
+            header .navbar {
+                flex-direction: column;
+            }
+            header .nav-links {
+                margin-top: 15px;
+            }
+            header .nav-links a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .section-title {
+                font-size: 30px;
+            }
+            .call-to-action h2 {
+                font-size: 32px;
+            }
+            .call-to-action p {
+                font-size: 18px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Merdeka<span>Soft</span></div>
-                <ul class="nav-links">
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#features">Fitur</a></li>
-                    <li><a href="#how-it-works">Cara Kerja</a></li>
-                    <li><a href="#pricing">Harga</a></li>
-                    <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#contact" class="cta-button">Kontak Kami</a></li>
-                </ul>
+        <div class="container navbar">
+            <a href="#" class="logo">Merdekasoft.id</a>
+            <nav class="nav-links">
+                <a href="#solusi">Solusi Kami</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#portofolio">Portofolio</a>
+                <a href="#tentang">Tentang Kami</a>
+                <a href="#kontak">Kontak</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Solusi Chatbot Canggih untuk Bisnis Anda</h1>
-            <p>Kami membantu bisnis Anda tumbuh dengan chatbot AI yang cerdas, responsif, dan mudah dikelola. Tingkatkan layanan pelanggan dan efisiensi operasional Anda sekarang juga.</p>
-            <div class="hero-buttons">
-                <a href="#pricing" class="btn btn-primary">Lihat Paket</a>
-                <a href="#contact" class="btn btn-secondary">Konsultasi Gratis</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Transformasi Digital Anda Dimulai dengan Chatbot AI Cerdas</h1>
+                <p>Merdekasoft.id menghadirkan solusi chatbot kustom yang intuitif dan efisien untuk meningkatkan pengalaman pelanggan dan mengoptimalkan operasional bisnis Anda.</p>
+                <a href="#kontak" class="btn-primary">Mulai Proyek Chatbot Anda</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mengapa Memilih Chatbot Kami?</h2>
-                <p>Kami menawarkan solusi chatbot terintegrasi dengan fitur-fitur unggulan yang akan membawa bisnis Anda ke level berikutnya.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
+        <section id="solusi" class="section">
+            <div class="container">
+                <h2 class="section-title">Solusi Chatbot Kami</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="https://via.placeholder.com/80/0078D4/FFFFFF?text=CRM" alt="Integrasi CRM" width="80" height="80">
+                        <h3>Integrasi CRM & Support</h3>
+                        <p>Hubungkan chatbot Anda dengan sistem CRM yang ada untuk otomatisasi layanan pelanggan dan dukungan 24/7.</p>
                     </div>
-                    <h3>AI Canggih</h3>
-                    <p>Chatbot kami didukung oleh teknologi AI terbaru yang mampu memahami dan merespons percakapan secara alami.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
+                    <div class="feature-item">
+                        <img src="https://via.placeholder.com/80/0078D4/FFFFFF?text=Sales" alt="Peningkatan Penjualan" width="80" height="80">
+                        <h3>Peningkatan Penjualan & Konversi</h3>
+                        <p>Gunakan chatbot untuk memandu calon pelanggan, menjawab pertanyaan produk, dan mendorong pembelian.</p>
                     </div>
-                    <h3>Integrasi Mudah</h3>
-                    <p>Terintegrasi dengan berbagai platform populer seperti WhatsApp, Facebook Messenger, Website, dan banyak lagi.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="feature-item">
+                        <img src="https://via.placeholder.com/80/0078D4/FFFFFF?text=HR" alt="Otomatisasi HR" width="80" height="80">
+                        <h3>Otomatisasi HR & Internal</h3>
+                        <p>Sederhanakan proses HR dan komunikasi internal dengan chatbot yang menangani pertanyaan umum karyawan.</p>
                     </div>
-                    <h3>Analitik Lengkap</h3>
-                    <p>Dapatkan wawasan mendalam tentang interaksi pelanggan dengan dashboard analitik kami yang komprehensif.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-cog"></i>
+                    <div class="feature-item">
+                        <img src="https://via.placeholder.com/80/0078D4/FFFFFF?text=Custom" alt="Chatbot Kustom" width="80" height="80">
+                        <h3>Pengembangan Chatbot Kustom</h3>
+                        <p>Bangun chatbot yang sepenuhnya disesuaikan dengan kebutuhan unik dan tujuan spesifik bisnis Anda.</p>
                     </div>
-                    <h3>Customizable</h3>
-                    <p>Chatbot yang sepenuhnya dapat disesuaikan dengan merek dan kebutuhan spesifik bisnis Anda.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Dukungan 24/7</h3>
-                    <p>Tim support kami siap membantu Anda kapan saja dengan respon cepat dan solusi tepat.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Keamanan Data</h3>
-                    <p>Data pelanggan Anda aman dengan sistem enkripsi tingkat tinggi dan perlindungan privasi.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>Bagaimana Cara Kerjanya?</h2>
-                <p>Hanya dalam 4 langkah sederhana, chatbot siap membantu bisnis Anda</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Konsultasi Kebutuhan</h3>
-                    <p>Kami memahami kebutuhan bisnis Anda melalui sesi konsultasi gratis.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Desain & Pengembangan</h3>
-                    <p>Tim kami merancang dan mengembangkan chatbot sesuai spesifikasi Anda.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Testing & Penyempurnaan</h3>
-                    <p>Chatbot diuji secara menyeluruh dan disempurnakan berdasarkan feedback.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Peluncuran & Dukungan</h3>
-                    <p>Chatbot siap diluncurkan dengan dukungan penuh dari tim kami.</p>
+        <section id="layanan" class="section">
+            <div class="container">
+                <h2 class="section-title">Layanan Komprehensif Kami</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Perencanaan & Strategi</h3>
+                        <p>Analisis kebutuhan bisnis Anda dan rancang strategi chatbot yang paling efektif.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Desain Percakapan</h3>
+                        <p>Membangun alur percakapan yang alami, intuitif, dan sesuai dengan brand Anda.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Pengembangan & Implementasi</h3>
+                        <p>Membangun, menguji, dan mengintegrasikan chatbot ke platform pilihan Anda.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Optimasi & Pemeliharaan</h3>
+                        <p>Pemantauan berkelanjutan, pembaruan, dan optimasi untuk performa chatbot terbaik.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h2>Paket Harga</h2>
-                <p>Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
+        <section class="call-to-action">
+            <div class="container">
+                <h2>Siap Memulai Perjalanan Chatbot Anda?</h2>
+                <p>Tim ahli kami siap membantu Anda merancang dan mengembangkan chatbot yang akan membawa bisnis Anda ke tingkat selanjutnya.</p>
+                <a href="#kontak" class="btn-primary">Hubungi Kami Sekarang</a>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Dasar</h3>
-                    <div class="price">Rp 1,5jt<span>/bulan</span></div>
-                    <ul class="pricing-features">
-                        <li>Chatbot Dasar</li>
-                        <li>Integrasi 1 Platform</li>
-                        <li>50 Interaksi/hari</li>
-                        <li>Dukungan via Email</li>
-                        <li>Basic Analytics</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Pilih Paket</a>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge">Populer</div>
-                    <h3>Profesional</h3>
-                    <div class="price">Rp 3,5jt<span>/bulan</span></div>
-                    <ul class="pricing-features">
-                        <li>Chatbot AI Canggih</li>
-                        <li>Integrasi 3 Platform</li>
-                        <li>200 Interaksi/hari</li>
-                        <li>Dukungan Prioritas</li>
-                        <li>Advanced Analytics</li>
-                        <li>Pelatihan Dasar</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Pilih Paket</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">Rp 7jt<span>/bulan</span></div>
-                    <ul class="pricing-features">
-                        <li>Chatbot Custom AI</li>
-                        <li>Integrasi Unlimited</li>
-                        <li>1000+ Interaksi/hari</li>
-                        <li>Dukungan 24/7</li>
-                        <li>Custom Analytics</li>
-                        <li>Pelatihan Lengkap</li>
-                        <li>Dedicated Account Manager</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Pilih Paket</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Apa Kata Klien Kami?</h2>
-                <p>Berikut testimoni dari klien yang telah menggunakan layanan kami</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Chatbot dari Merdekasoft telah membantu kami meningkatkan respon ke pelanggan hingga 80%. Layanan pelanggan kami sekarang berjalan 24/7 tanpa hambatan."
+        <section id="portofolio" class="section">
+            <div class="container">
+                <h2 class="section-title">Portofolio Kami</h2>
+                <p style="text-align: center; margin-bottom: 40px;">Lihat beberapa proyek chatbot yang telah kami selesaikan untuk klien kami.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Chatbot E-commerce</h3>
+                        <p>Membantu pelanggan menemukan produk dan melacak pesanan.</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso">
-                        </div>
-                        <div class="author-info">
-                            <h4>Budi Santoso</h4>
-                            <p>Direktur, PT Retail Maju</p>
-                        </div>
+                    <div class="feature-item">
+                        <h3>Chatbot Layanan Publik</h3>
+                        <p>Memberikan informasi dan panduan kepada masyarakat.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Chatbot Perbankan</h3>
+                        <p>Menjawab pertanyaan nasabah dan membantu transaksi dasar.</p>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Tim Merdekasoft sangat profesional dalam mengembangkan chatbot untuk bisnis travel kami. Hasilnya melebihi ekspektasi dan mudah dikelola."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dewi Lestari">
-                        </div>
-                        <div class="author-info">
-                            <h4>Dewi Lestari</h4>
-                            <p>CEO, Tour & Travel Bahagia</p>
-                        </div>
-                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Dalam 3 bulan setelah menggunakan chatbot ini, konversi penjualan kami meningkat 35%. Investasi yang sangat worth it untuk bisnis e-commerce kami."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Agus Wijaya">
-                        </div>
-                        <div class="author-info">
-                            <h4>Agus Wijaya</h4>
-                            <p>Founder, TokoOnlineku.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Siap Meningkatkan Bisnis Anda dengan Chatbot?</h2>
-            <p>Hubungi kami sekarang untuk konsultasi gratis dan temukan solusi chatbot terbaik untuk kebutuhan bisnis Anda.</p>
-            <a href="mailto:info@merdekasoft.id" class="btn btn-primary">Email Kami</a>
-        </div>
-    </section>
+        <section id="tentang" class="section">
+            <div class="container">
+                <h2 class="section-title">Tentang Merdekasoft.id</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto;">Kami adalah tim pengembang chatbot yang berdedikasi untuk membantu bisnis Anda tumbuh melalui inovasi teknologi. Dengan keahlian mendalam dalam kecerdasan buatan dan desain pengalaman pengguna, kami menciptakan solusi chatbot yang tidak hanya fungsional tetapi juga memberikan nilai nyata.</p>
+                <p style="text-align: center; max-width: 800px; margin: 20px auto 0 auto;">Visi kami adalah memberdayakan bisnis Indonesia dengan alat digital cerdas yang efisien dan mudah diakses.</p>
+            </div>
+        </section>
 
-    <!-- Footer -->
+        <section id="kontak" class="section">
+            <div class="container">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p style="text-align: center; margin-bottom: 30px;">Siap mendiskusikan kebutuhan chatbot Anda? Jangan ragu untuk menghubungi kami melalui formulir di bawah ini atau melalui kontak langsung.</p>
+                <form style="max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="margin-bottom: 20px;">
+                        <label for="nama" style="display: block; margin-bottom: 8px; font-weight: bold;">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold;">Email:</label>
+                        <input type="email" id="email" name="email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="perusahaan" style="display: block; margin-bottom: 8px; font-weight: bold;">Nama Perusahaan (Opsional):</label>
+                        <input type="text" id="perusahaan" name="perusahaan" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="pesan" style="display: block; margin-bottom: 8px; font-weight: bold;">Pesan Anda:</label>
+                        <textarea id="pesan" name="pesan" rows="6" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Kirim Pesan</button>
+                </form>
+                <div style="text-align: center; margin-top: 30px;">
+                    <p>Atau hubungi kami langsung:</p>
+                    <p>Email: <a href="mailto:info@merdekasoft.id" style="color: #0078D4; text-decoration: none;">info@merdekasoft.id</a></p>
+                    <p>Telepon: <a href="tel:+6281234567890" style="color: #0078D4; text-decoration: none;">+62 812-3456-7890</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Tentang Kami</h3>
-                    <p>Merdekasoft.id adalah penyedia jasa pembuatan chatbot profesional dengan pengalaman melayani berbagai bisnis di Indonesia.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <ul>
-                        <li><a href="#">Pembuatan Chatbot</a></li>
-                        <li><a href="#">Integrasi Platform</a></li>
-                        <li><a href="#">Pelatihan Chatbot</a></li>
-                        <li><a href="#">Maintenance</a></li>
-                        <li><a href="#">Konsultasi Gratis</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Link Cepat</h3>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#features">Fitur</a></li>
-                        <li><a href="#how-it-works">Cara Kerja</a></li>
-                        <li><a href="#pricing">Harga</a></li>
-                        <li><a href="#testimonials">Testimoni</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Kontak</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@merdekasoft.id</li>
-                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
-                    </ul>
-                </div>
+        <div class="container footer-grid">
+            <div>
+                <h4>Merdekasoft.id</h4>
+                <p>Menghadirkan solusi chatbot cerdas untuk bisnis Anda.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Merdekasoft.id. All Rights Reserved.</p>
+            <div>
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#solusi">Solusi Kami</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#portofolio">Portofolio</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
             </div>
+            <div>
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Chatbot AI Kustom</a></li>
+                    <li><a href="#">Integrasi Chatbot</a></li>
+                    <li><a href="#">Optimasi NLP</a></li>
+                    <li><a href="#">Dukungan & Pemeliharaan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Ikuti Kami</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 Merdekasoft.id. Hak Cipta Dilindungi.</p>
+            <p><a href="#" style="color: #ccc; text-decoration: none;">Kebijakan Privasi</a> | <a href="#" style="color: #ccc; text-decoration: none;">Syarat & Ketentuan</a></p>
         </div>
     </footer>
 </body>
