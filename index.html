@@ -161,18 +161,22 @@
         }
         
         .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Perubahan utama untuk menengahkan kartu */
             gap: 30px;
+            max-width: 1200px; /* Lebar maksimum grid produk */
+            margin: 0 auto; /* Pusatkan grid */
         }
-        
+
         .product-card {
             border: 1px solid #e1e1e1;
             border-radius: 4px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px; /* Lebar tetap untuk kartu */
+            margin: 0 15px; /* Jarak antar kartu */
         }
-        
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
