@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Theme Variables from previous blend, with new adjustments */
-            --theme-primary-accent: #CC0000; /* Red Hat Red - for non-button accents */
+            --theme-primary-accent: #CC0000; 
             --theme-primary-accent-hover: #AA0000; 
             
             --theme-body-bg: #f8f9fa;       
@@ -18,13 +17,12 @@
             --theme-text-secondary: #555555; 
             --theme-text-on-accent: #ffffff; 
             --theme-text-on-dark: #f0f0f0;   
-            --theme-text-on-light: #212529; /* For text on white backgrounds */
+            --theme-text-on-light: #212529; 
 
-            /* NEW: Header, Hero, Download Button specific colors */
-            --theme-header-actual-bg: #ffffff; /* White header */
-            --theme-hero-actual-bg: #000000;   /* Black hero */
-            --theme-download-btn-bg: #28a745;  /* Green for download buttons */
-            --theme-download-btn-hover-bg: #218838; /* Darker Green */
+            --theme-header-actual-bg: #ffffff; 
+            --theme-hero-actual-bg: #000000;   
+            --theme-download-btn-bg: #28a745;  
+            --theme-download-btn-hover-bg: #218838; 
             
             --theme-footer-bg: #333333;      
             
@@ -32,6 +30,8 @@
             --theme-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
             --theme-radius: 6px;             
             --theme-transition: all 0.25s ease-in-out;
+
+            --theme-icon-black: #000000; /* New variable for black icons */
         }
         
         * {
@@ -50,8 +50,8 @@
         
         /* Header */
         header {
-            background-color: var(--theme-header-actual-bg); /* UPDATED: White header */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow for light header */
+            background-color: var(--theme-header-actual-bg); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -82,7 +82,7 @@
         .logo-text {
             font-size: 1.3rem; 
             font-weight: 600;  
-            color: var(--theme-text-on-light); /* UPDATED: Dark text for white header */
+            color: var(--theme-text-on-light); 
         }
         
         .menu-toggle {
@@ -90,7 +90,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--theme-text-on-light); /* UPDATED: Dark icon for white header */
+            color: var(--theme-icon-black); /* UPDATED: Menu toggle icon to black */
             cursor: pointer;
         }
         
@@ -102,7 +102,7 @@
         
         nav ul li a {
             text-decoration: none;
-            color: var(--theme-text-on-light); /* UPDATED: Dark text for white header */
+            color: var(--theme-text-on-light); 
             font-weight: 500;
             padding: 8px 12px;
             border-radius: var(--theme-radius);
@@ -110,21 +110,20 @@
         }
         
         nav ul li a:hover {
-            color: var(--theme-primary-accent); /* Red accent text on hover */
-            background-color: #f0f0f0; /* Light gray background on hover */
+            color: var(--theme-primary-accent); 
+            background-color: #f0f0f0; 
         }
         
         /* Hero Section */
         .hero {
-            background: var(--theme-hero-actual-bg); /* UPDATED: Black hero background */
-            color: var(--theme-text-on-dark); /* UPDATED: Light text for black hero */
+            background: var(--theme-hero-actual-bg); 
+            color: var(--theme-text-on-dark); 
             padding: 70px 5% 80px; 
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* border-bottom: 1px solid var(--theme-border-color); REMOVED: Not needed for black bg */
         }
         
         .hero h1 {
@@ -133,65 +132,62 @@
             line-height: 1.3;
             max-width: 850px;
             font-weight: 600;
-            color: var(--theme-text-on-dark); /* UPDATED: Light text */
+            color: var(--theme-text-on-dark); 
         }
         
         .hero p {
             font-size: 1.15rem; 
             max-width: 650px;
             margin: 0 auto 2rem;
-            opacity: 0.85; /* Adjusted opacity for light text on dark */
-            color: var(--theme-text-on-dark); /* UPDATED: Light text */
+            opacity: 0.85; 
+            color: var(--theme-text-on-dark); 
         }
         
-        /* Default Button Style (can be general or overridden) */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px; 
             padding: 12px 28px; 
-            background-color: var(--theme-primary-accent); /* Default to Red */
+            background-color: var(--theme-primary-accent); 
             color: var(--theme-text-on-accent);
             text-decoration: none;
             border-radius: var(--theme-radius);
             font-weight: 500; 
             transition: var(--theme-transition);
-            border: 1px solid transparent; /* Make border transparent by default */
+            border: 1px solid transparent; 
             cursor: pointer;
             font-size: 0.95rem; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .btn:hover {
-            background-color: var(--theme-primary-accent-hover); /* Default hover */
+            background-color: var(--theme-primary-accent-hover); 
             border-color: transparent;
             transform: translateY(-1px);
             box-shadow: 0 3px 6px rgba(0,0,0,0.08);
         }
 
-        /* Download Buttons (Green) */
-        .hero .btn[href="#unduh"], /* Target hero download button */
+        .hero .btn[href="#unduh"], 
         .download-card .btn {
-            background-color: var(--theme-download-btn-bg); /* UPDATED: Green */
+            background-color: var(--theme-download-btn-bg); 
             border-color: var(--theme-download-btn-bg);
-            color: var(--theme-text-on-accent); /* White text */
+            color: var(--theme-text-on-accent); 
         }
         .hero .btn[href="#unduh"]:hover,
         .download-card .btn:hover {
-            background-color: var(--theme-download-btn-hover-bg); /* UPDATED: Darker Green */
+            background-color: var(--theme-download-btn-hover-bg); 
             border-color: var(--theme-download-btn-hover-bg);
         }
         
-        /* Outline Button in Hero (for black background) */
         .hero .btn-outline {
             background-color: transparent;
-            border: 1px solid var(--theme-text-on-dark); /* UPDATED: Light border */
-            color: var(--theme-text-on-dark); /* UPDATED: Light text */
+            border: 1px solid var(--theme-text-on-dark); 
+            color: var(--theme-text-on-dark); 
             box-shadow: none;
         }
         .hero .btn-outline:hover {
-            background-color: var(--theme-text-on-dark); /* Light background on hover */
-            color: var(--theme-hero-actual-bg); /* Dark text on hover (black) */
+            background-color: var(--theme-text-on-dark); 
+            color: var(--theme-hero-actual-bg); 
             border-color: var(--theme-text-on-dark);
         }
         
@@ -224,7 +220,7 @@
             display: block;
             width: 70px; 
             height: 3px; 
-            background-color: var(--theme-primary-accent); /* Red accent for underline */
+            background-color: var(--theme-primary-accent); 
             margin: 0.8rem auto 0; 
             border-radius: 2px;
         }
@@ -252,7 +248,7 @@
         .feature-icon {
             font-size: 2.2rem; 
             margin-bottom: 1.2rem; 
-            color: var(--theme-primary-accent); /* Red accent for icons */
+            color: var(--theme-icon-black); /* UPDATED: Feature icons to black */
         }
         
         .feature-card h3 {
@@ -268,7 +264,7 @@
         
         /* Slogan Section */
         .slogan-section {
-            background-color: var(--theme-primary-accent); /* Red background */
+            background-color: var(--theme-primary-accent); 
             color: var(--theme-text-on-accent);
             padding: 4rem 5%; 
             text-align: center;
@@ -387,7 +383,7 @@
         }
         
         .social-links a {
-            color: var(--theme-text-on-dark);
+            color: var(--theme-text-on-dark); /* Default color for icon (light on dark footer) */
             font-size: 1.1rem; 
             opacity: 0.7;
             transition: var(--theme-transition);
@@ -395,7 +391,7 @@
         
         .social-links a:hover {
             opacity: 1;
-            color: var(--theme-primary-accent); /* Red accent for social link hover */
+            color: var(--theme-icon-black); /* UPDATED: Social icon hover to black */
         }
         
         .footer-links h3 {
@@ -421,7 +417,7 @@
         }
         
         .footer-links ul li a:hover {
-            color: var(--theme-primary-accent); /* Red accent for footer link hover */
+            color: var(--theme-primary-accent); 
             padding-left: 3px;
         }
         
@@ -445,10 +441,10 @@
             .menu-toggle { display: block; }
             nav {
                 position: fixed;
-                top: 60px; /* Header height dependent */
+                top: 60px; 
                 left: 0;
                 width: 100%;
-                background-color: var(--theme-header-actual-bg); /* UPDATED: White mobile nav */
+                background-color: var(--theme-header-actual-bg); 
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 padding: 1rem 5%; 
                 transform: translateY(-150%);
@@ -460,19 +456,19 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
-            nav ul li a { /* Styles for links in active mobile nav */
+            nav ul li a { 
                 display: block;
                 padding: 10px 0;
-                color: var(--theme-text-on-light); /* UPDATED: Dark text */
+                color: var(--theme-text-on-light); 
             }
              nav ul li a:hover {
-                color: var(--theme-primary-accent); /* Red accent */
-                background-color: #f0f0f0; /* Light gray bg */
+                color: var(--theme-primary-accent); 
+                background-color: #f0f0f0; 
             }
             .hero { padding: 4rem 5% 5rem; }
             .hero h1 { font-size: 1.8rem; }
             .btn-group { flex-direction: column; width: 100%; }
-            .btn, .hero .btn[href="#unduh"], .download-card .btn { width: 100%; } /* Ensure full width */
+            .btn, .hero .btn[href="#unduh"], .download-card .btn { width: 100%; } 
             .section-title { font-size: 1.6rem; }
             .slogan { font-size: 1.4rem; }
             .slogan span { font-size: 0.95rem; }
