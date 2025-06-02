@@ -3,41 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MerdekaSoft.id - Beautiful Effect Efficient Freedom</title>
+    <title>MerdekaSoft - B OS untuk Pendidikan Indonesia</title>
     <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --palestine-black: #000000;
-            --palestine-white: #FFFFFF;
-            --palestine-green: #007A3D;
-            --palestine-red: #CE1126;
+            --primary: #007A3D; /* Changed to green */
+            --primary-dark: #00612F;
+            --red: #CE1126;
+            --green: #007A3D;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #F8F9FA;
+            --gray-medium: #E9ECEF;
+            --gray-dark: #212529;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
         }
         
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--gray-dark);
             line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
         }
         
+        /* Header */
         header {
-            background-color: var(--palestine-white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: var(--white);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            padding: 0 5%;
         }
         
-        .navbar {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 24px;
+            padding: 15px 0;
             max-width: 1600px;
             margin: 0 auto;
         }
@@ -45,414 +58,656 @@
         .logo {
             display: flex;
             align-items: center;
+            gap: 12px;
+            text-decoration: none;
         }
         
         .logo img {
-            height: 30px;
-            margin-right: 10px;
+            height: 40px;
+            width: auto;
         }
         
         .logo-text {
-            font-size: 22px;
-            font-weight: 600;
-            background: linear-gradient(to right, var(--palestine-black), var(--palestine-green), var(--palestine-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--black);
         }
         
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav-links li {
-            margin-left: 20px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #262626;
-            font-weight: 500;
-            font-size: 15px;
-        }
-        
-        .nav-links a:hover {
-            color: var(--palestine-red);
-        }
-        
+        /* Mobile menu toggle */
         .menu-toggle {
             display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-dark);
             cursor: pointer;
-            font-size: 24px;
         }
         
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--gray-dark);
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+            background-color: var(--gray-medium);
+        }
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(135deg, rgba(0,122,61,0.9) 0%, rgba(0,97,47,0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 80px 24px;
+            color: var(--white);
+            padding: 80px 5%;
             text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 600;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 900px;
         }
         
         .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
         }
         
-        .slogan {
-            font-size: 1.75rem;
-            font-weight: 300;
-            color: var(--palestine-white);
-            background-color: var(--palestine-red);
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 4px;
-            margin-bottom: 30px;
-        }
-        
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--palestine-green);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: var(--white);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: var(--radius);
             font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
             font-size: 1rem;
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 122, 61, 0.3);
         }
         
         .btn:hover {
-            background-color: var(--palestine-black);
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 122, 61, 0.4);
         }
         
-        .products {
-            max-width: 1600px;
-            margin: 60px auto;
-            padding: 0 24px;
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--palestine-black);
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--black);
             position: relative;
         }
         
-        .section-title:after {
-            content: "";
+        .section-title::after {
+            content: '';
             display: block;
             width: 80px;
             height: 4px;
-            background: linear-gradient(to right, var(--palestine-black), var(--palestine-green), var(--palestine-red));
-            margin: 10px auto 0;
+            background-color: var(--primary);
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
         
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Perubahan utama untuk menengahkan kartu */
-            gap: 30px;
-            max-width: 1200px; /* Lebar maksimum grid produk */
-            margin: 0 auto; /* Pusatkan grid */
-        }
-
-        .product-card {
-            border: 1px solid #e1e1e1;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 300px; /* Lebar tetap untuk kartu */
-            margin: 0 15px; /* Jarak antar kartu */
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .product-image {
-            height: 180px;
-            background-color: #f3f3f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-info h3 {
-            margin-top: 0;
-            color: var(--palestine-green);
-            font-size: 1.25rem;
-        }
-        
-        .product-info p {
-            color: #666;
-            font-size: 0.875rem;
-        }
-        
-        .learn-more {
-            color: var(--palestine-red);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.875rem;
-            display: inline-block;
-            margin-top: 15px;
-        }
-        
-        footer {
-            background-color: var(--palestine-black);
-            color: white;
-            padding: 40px 24px;
-        }
-        
-        .footer-content {
-            max-width: 1600px;
-            margin: 0 auto;
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .footer-column h4 {
-            color: var(--palestine-white);
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1rem;
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--gray-medium);
         }
         
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         
-        .footer-column li {
-            margin-bottom: 10px;
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
         
-        .footer-column a {
-            color: #adadad;
-            text-decoration: none;
-            font-size: 0.875rem;
+        .feature-card h3 {
+            color: var(--black);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
-        .footer-column a:hover {
-            color: white;
-            text-decoration: underline;
+        /* Slogan Section */
+        .slogan-section {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .copyright {
-            max-width: 1600px;
-            margin: 30px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 0.75rem;
-            color: #adadad;
+        .slogan {
+            font-size: 2rem;
+            font-weight: 700;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .slogan span {
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        /* Download Section */
+        .download {
+            padding: 80px 5%;
+            background-color: var(--gray-light);
             text-align: center;
         }
         
-        .palestine-flag {
-            height: 20px;
-            display: inline-block;
-            margin-left: 10px;
-            vertical-align: middle;
+        .download-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 3rem auto 0;
         }
         
-        /* Responsive Styles */
+        .download-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid var(--gray-medium);
+        }
+        
+        .download-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .download-card h3 {
+            color: var(--black);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .download-card p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 5rem 5% 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            width: auto;
+        }
+        
+        .footer-logo div {
+            font-weight: 600;
+        }
+        
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+        
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Flag Colors */
+        .flag-colors {
+            height: 8px;
+            background: linear-gradient(to right, var(--black) 33%, var(--white) 33%, var(--white) 66%, var(--green) 66%, var(--green) 100%);
+            position: relative;
+        }
+        
+        .flag-colors::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 16.5%;
+            background-color: var(--red);
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .slogan {
+                font-size: 1.8rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
             
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 60px;
+            nav {
+                position: fixed;
+                top: 80px;
                 left: 0;
-                right: 0;
-                background-color: white;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                padding: 2rem;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
                 flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                gap: 1rem;
             }
             
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
+            nav ul li a {
+                display: block;
+                padding: 12px 0;
             }
             
             .hero {
-                padding: 60px 20px;
+                min-height: auto;
+                padding: 5rem 5%;
             }
             
             .hero h1 {
                 font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
             
             .slogan {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
             }
             
-            .product-grid {
+            .slogan span {
+                font-size: 1rem;
+            }
+            
+            .footer-container {
                 grid-template-columns: 1fr;
             }
         }
         
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 10px 15px;
-            }
-            
-            .logo-text {
-                font-size: 18px;
-            }
-            
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
+    <div class="flag-colors"></div>
+    
     <header>
-        <div class="navbar">
-            <div class="logo">
+        <div class="nav-container">
+            <a href="#" class="logo">
                 <img src="icon.png" alt="MerdekaSoft Logo">
-                <span class="logo-text">MerdekaSoft</span>
-            </div>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="#">Produk</a></li>
-                <li><a href="#">Solusi</a></li>
-                <li><a href="#">Sumber Daya</a></li>
-                <li><a href="#">Dukungan</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-            </ul>
+                <div class="logo-text">MerdekaSoft</div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#fitur">Fitur</a></li>
+                    <li><a href="#unduh">Unduh</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     
-    <section class="hero">
-        <div class="slogan">Beautiful Effect Efficient Freedom</div>
-        <h1>Linux untuk Semua</h1>
-        <p>MerdekaSoft menghadirkan solusi open-source berbasis Linux yang powerful, indah, dan membebaskan - seperti semangat kemerdekaan Palestina yang tak pernah padam.</p>
-        <a href="#" class="btn">Unduh Sekarang</a>
+    <section class="hero" id="home">
+        <h1 class="animate">B OS - Sistem Operasi untuk Pendidikan Indonesia</h1>
+        <p class="animate delay-1">Beautiful, Effective, Efficient, dan Freedom untuk dunia pendidikan dengan solusi lengkap yang bekerja penuh offline tanpa ketergantungan internet.</p>
+        <div class="btn-group animate delay-2">
+            <a href="#unduh" class="btn"><i class="fas fa-download"></i> Unduh Sekarang</a>
+            <a href="#fitur" class="btn btn-outline"><i class="fas fa-play-circle"></i> Lihat Demo</a>
+        </div>
     </section>
     
-    <section class="products">
-        <h2 class="section-title">Produk Kami</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="product-info">
-                    <h3>BEE Operating System</h3>
-                    <p>Distro Linux modern dengan antarmuka yang indah dan performa tinggi, dibangun untuk produktivitas dan kreativitas.</p>
-                    <a href="#" class="learn-more">Pelajari lebih lanjut →</a>
-                </div>
+    <section class="features" id="fitur">
+        <h2 class="section-title">Fitur Unggulan B OS</h2>
+        <div class="features-grid">
+            <div class="feature-card animate">
+                <div class="feature-icon"><i class="fas fa-plug"></i></div>
+                <h3>Full Offline</h3>
+                <p>Semua aplikasi dapat diinstal dan berjalan tanpa koneksi internet, sempurna untuk daerah dengan konektivitas terbatas.</p>
             </div>
-            
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="product-info">
-                    <h3>KDE connect</h3>
-                    <p>Aplikasi open-source yang menghubungkan smartphone dan komputer secara nirkabel untuk berbagi notifikasi, file, dan kontrol perangkat secara praktis.</p>
-                    <a href="#" class="learn-more">Pelajari lebih lanjut →</a>
-                </div>
+            <div class="feature-card animate delay-1">
+                <div class="feature-icon"><i class="fas fa-code"></i></div>
+                <h3>Pengembangan Mudah</h3>
+                <p>Framework pengembangan aplikasi berbasis PyQt yang memudahkan pembuatan aplikasi pendidikan dengan cepat.</p>
             </div>
-            
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="product-info">
-                    <h3>Qt Dev Tools</h3>
-                    <p>Kumpulan alat pengembangan terintegrasi untuk membangun aplikasi modern dengan kebebasan sejati.</p>
-                    <a href="#" class="learn-more">Pelajari lebih lanjut →</a>
-                </div>
+            <div class="feature-card animate delay-2">
+                <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                <h3>Kurikulum Lengkap</h3>
+                <p>Dilengkapi dengan konten pendidikan sesuai kurikulum nasional dari SD hingga SMA/SMK.</p>
+            </div>
+            <div class="feature-card animate">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Keamanan Tinggi</h3>
+                <p>Sistem keamanan terintegrasi untuk melindungi data siswa dan institusi pendidikan.</p>
+            </div>
+            <div class="feature-card animate delay-1">
+                <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                <h3>Kompatibilitas Luas</h3>
+                <p>Mendukung berbagai perangkat keras baik baru maupun lama dengan kebutuhan spesifikasi rendah.</p>
+            </div>
+            <div class="feature-card animate delay-2">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Dukungan Komunitas</h3>
+                <p>Komunitas pengembang dan pendidik yang aktif untuk saling berbagi pengetahuan dan solusi.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="slogan-section">
+        <div class="slogan animate">
+            Beautiful • Effective • Efficient • Freedom
+            <span>Semboyan MerdekaSoft untuk pendidikan Indonesia yang merdeka</span>
+        </div>
+    </section>
+    
+    <section class="download" id="unduh">
+        <h2 class="section-title">Unduh B OS</h2>
+        <p class="animate">Pilih versi yang sesuai dengan kebutuhan Anda</p>
+        <div class="download-options">
+            <div class="download-card animate">
+                <h3>B OS Edu Basic</h3>
+                <p>Versi dasar untuk sekolah dengan fitur standar</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Unduh</a>
+            </div>
+            <div class="download-card animate delay-1">
+                <h3>B OS Edu Pro</h3>
+                <p>Versi lengkap dengan semua fitur premium</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Unduh</a>
+            </div>
+            <div class="download-card animate delay-2">
+                <h3>B OS Developer</h3>
+                <p>Untuk pengembang yang ingin membuat aplikasi pendidikan</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Unduh</a>
             </div>
         </div>
     </section>
     
     <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Apa's Baru</h4>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="icon.png" alt="MerdekaSoft Logo">
+                    <div>MerdekaSoft</div>
+                </div>
+                <p>Sistem Operasi untuk pendidikan Indonesia yang merdeka, mandiri, dan berkualitas.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Produk</h3>
                 <ul>
-                    <li><a href="#">MerdekaOS 2.0</a></li>
-                    <li><a href="#">Freedom Office Update</a></li>
-                    <li><a href="#">Rilis Terbaru</a></li>
+                    <li><a href="#">B OS Edu Basic</a></li>
+                    <li><a href="#">B OS Edu Pro</a></li>
+                    <li><a href="#">B OS Developer</a></li>
+                    <li><a href="#">Aplikasi Pendidikan</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-column">
-                <h4>Komunitas</h4>
+            <div class="footer-links">
+                <h3>Sumber Daya</h3>
                 <ul>
-                    <li><a href="#">Forum Pengguna</a></li>
-                    <li><a href="#">Kontribusi</a></li>
-                    <li><a href="#">Acara</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Dukungan</h4>
-                <ul>
-                    <li><a href="#">Bantuan</a></li>
                     <li><a href="#">Dokumentasi</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Panduan</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Komunitas</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-column">
-                <h4>Tentang Kami</h4>
+            <div class="footer-links">
+                <h3>Perusahaan</h3>
                 <ul>
-                    <li><a href="#">Visi Misi</a></li>
-                    <li><a href="#">Tim</a></li>
-                    <li><a href="#">Karier</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Kontak</a></li>
+                    <li><a href="#">Mitra</a></li>
                 </ul>
             </div>
         </div>
-        
         <div class="copyright">
-            &copy; 2025 MerdekaSoft.id - Beautiful Effect Efficient Freedom 
+            &copy; 2025 MerdekaSoft.id - All Rights Reserved
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
         
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    // Close mobile menu if open
+                    if(mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
