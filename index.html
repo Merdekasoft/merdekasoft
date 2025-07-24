@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MerdekaSoft - B OS untuk Pendidikan Indonesia</title>
+    <title>B-OS by Merdekasoft – Empowering Learning, Creating Futures</title>
     <link rel="icon" href="icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --theme-primary-accent: #CC0000; 
+            --theme-primary-accent: #1ba339; 
             --theme-primary-accent-hover: #AA0000; 
             
             --theme-body-bg: #f8f9fa;       
@@ -21,8 +21,8 @@
 
             --theme-header-actual-bg: #ffffff; 
             --theme-hero-actual-bg: #000000;   
-            --theme-download-btn-bg: #28a745;  
-            --theme-download-btn-hover-bg: #218838; 
+            --theme-download-btn-bg: #CC0000;
+            --theme-download-btn-hover-bg: #249e24; 
             
             --theme-footer-bg: #333333;      
             
@@ -143,7 +143,7 @@
             background-color: var(--theme-primary-accent); color: var(--theme-text-on-accent);
             text-decoration: none; font-weight: 500; 
             transition: var(--theme-transition);
-            border: 1px solid transparent; 
+            border: 2px solid var(--theme-primary-accent);
             cursor: pointer; font-size: 0.95rem; 
             clip-path: var(--hexagon-clip-path); 
             filter: var(--theme-shadow-filter);
@@ -151,7 +151,7 @@
         }
         .btn:hover {
             background-color: var(--theme-primary-accent-hover); 
-            border-color: transparent;
+            border-color: var(--theme-primary-accent-hover); 
             transform: translateY(-1px);
             filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); 
         }
@@ -339,88 +339,154 @@
             <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="#produk">Produk</a></li>
-                    <li><a href="#fitur">Fitur</a></li>
-                    <li><a href="#unduh">Unduh</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="#produk">Products</a></li>
+                    <li><a href="#fitur">Features</a></li>
+                    <li><a href="#unduh">Download</a></li>
+                    <li><a href="#tentang">About</a></li>
+                    <li><a href="#kontak">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
     <section class="hero" id="home">
-        <h1 class="animate">B OS - Sistem Operasi untuk Pendidikan Indonesia</h1>
-        <p class="animate delay-1">Beautiful, Effective, Efficient, dan Freedom untuk dunia pendidikan dengan solusi lengkap yang bekerja penuh offline tanpa ketergantungan internet.</p>
-        <div class="btn-group animate delay-2">
-            <a href="#unduh" class="btn"><i class="fas fa-download"></i> Unduh Sekarang</a>
+        <h1 class="animate">B OS – Inspired by the Bee</h1>
+        <p class="animate delay-1">
+            Like the bee, B OS brings harmony, productivity, and endless possibilities. Beautiful. Effective. Efficient.
+        </p>
+        <p class="animate delay-2">
+            Experience the future—test B-OS instantly, enjoy blazing performance, and unlock a world of creative tools. All free, for everyone.
+        </p>
+        <div class="btn-group animate delay-3">
+            <a href="#unduh" class="btn"><i class="fas fa-download"></i> Get B-OS Now</a>
             <a href="#fitur" class="btn btn-outline">
-                <span style="position: relative; z-index: 3;"><i class="fas fa-play-circle"></i> Lihat Demo</span>
+                <span style="position: relative; z-index: 3;"><i class="fas fa-play-circle"></i> Try Live Demo</span>
             </a>
+        </div>
+    </section>
+
+    <section class="story-section" style="background:#fff; padding: 60px 5%; text-align:center;">
+        <h2 class="section-title" style="margin-bottom:1.5rem;">The Story Behind B OS</h2>
+        <div style="max-width:800px; margin:0 auto; color:#444; font-size:1.08rem;">
+            <p style="margin-bottom:1.2rem;">
+                B OS is designed to be as helpful and productive as a bee—bringing benefits to everyone. The user interface is inspired by the simplicity and elegance of ChromeOS, making it intuitive and modern.
+            </p>
+            <p style="margin-bottom:1.2rem;">
+                Under the hood, B OS is powered by Debian Testing, following the approach of Google's gLinux for stability and access to the latest technology. We chose KDE Plasma as the desktop environment because it feels familiar to Windows users, making the transition easy and comfortable.
+            </p>
+            <p>
+                B OS is crafted for learning, creativity, and productivity—combining the best of open source with a beautiful, user-friendly experience.
+            </p>
         </div>
     </section>
     
     <section class="features" id="fitur">
-        <h2 class="section-title">Fitur Unggulan B OS</h2>
+        <h2 class="section-title">Why Choose B-OS?</h2>
         <div class="features-grid">
             <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-plug"></i></div>
-                <h3>Full Offline</h3>
-                <p>Semua aplikasi dapat diinstal dan berjalan tanpa koneksi internet, sempurna untuk daerah dengan konektivitas terbatas.</p>
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Instant Live Experience</h3>
+                <p>Try B-OS instantly—no installation needed. Explore every feature safely, anytime, anywhere.</p>
             </div>
             <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-code"></i></div>
-                <h3>Pengembangan Mudah</h3>
-                <p>Framework pengembangan aplikasi berbasis PyQt yang memudahkan pembuatan aplikasi pendidikan dengan cepat.</p>
+                <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Next-Gen Technology</h3>
+                <p>Powered by the latest Debian Testing and bleeding-edge drivers for unmatched speed and compatibility.</p>
             </div>
             <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-book-open"></i></div>
-                <h3>Kurikulum Lengkap</h3>
-                <p>Dilengkapi dengan konten pendidikan sesuai kurikulum nasional dari SD hingga SMA/SMK.</p>
+                <div class="feature-icon"><i class="fas fa-life-ring"></i></div>
+                <h3>Rescue & Restore</h3>
+                <p>Recover deleted files with advanced undelete tools—your data is always protected.</p>
             </div>
             <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Keamanan Tinggi</h3>
-                <p>Sistem keamanan terintegrasi untuk melindungi data siswa dan institusi pendidikan.</p>
+                <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                <h3>Smart Local Chat</h3>
+                <p>Connect and collaborate instantly with BBM-style chat—no internet required, just your local network.</p>
             </div>
             <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-laptop"></i></div>
-                <h3>Kompatibilitas Luas</h3>
-                <p>Mendukung berbagai perangkat keras baik baru maupun lama dengan kebutuhan spesifikasi rendah.</p>
+                <div class="feature-icon"><i class="fas fa-images"></i></div>
+                <h3>Creative Photo Printing</h3>
+                <p>Print photos in any size with ease—perfect for portfolios, projects, and memories.</p>
             </div>
             <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-users"></i></div>
-                <h3>Dukungan Komunitas</h3>
-                <p>Komunitas pengembang dan pendidik yang aktif untuk saling berbagi pengetahuan dan solusi.</p>
+                <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Modern App Framework</h3>
+                <p>Build and run stunning apps with KDE and PySide6—empowering developers and users alike.</p>
+            </div>
+            <div class="feature-card animate">
+                <div class="feature-icon"><i class="fas fa-magic"></i></div>
+                <h3>Easy App Installer</h3>
+                <p>Install new software in seconds with our intuitive wizard—no tech skills required.</p>
+            </div>
+            <div class="feature-card animate delay-1">
+                <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <h3>Turbo Download</h3>
+                <p>Accelerate your downloads and manage big files effortlessly with our built-in accelerator.</p>
+            </div>
+            <div class="feature-card animate delay-2">
+                <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                <h3>Truly Free, Forever</h3>
+                <p>Enjoy every feature and app at zero cost—B-OS is open, accessible, and always free for everyone.</p>
             </div>
         </div>
     </section>
     
     <section class="slogan-section">
         <div class="slogan animate">
-            Beautiful • Effective • Efficient • Freedom
-            <span>Semboyan MerdekaSoft untuk pendidikan Indonesia yang merdeka</span>
+            Imagine. Learn. Create. Share.
+            <span>B-OS by Merdekasoft – Empowering your journey, inspiring your future.</span>
         </div>
     </section>
     
     <section class="download" id="unduh">
-        <h2 class="section-title">Unduh B OS</h2>
-        <p class="animate">Pilih versi yang sesuai dengan kebutuhan Anda</p>
         <div class="download-options">
             <div class="download-card animate">
-                <h3>B OS Edu Basic</h3>
-                <p>Versi dasar untuk sekolah dengan fitur standar</p>
-                <a href="#" class="btn"><i class="fas fa-download"></i> Unduh</a>
+                <h3>Essential Edition</h3>
+                <p>Perfect for schools and organizations—essential tools, simple and reliable.</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Download</a>
             </div>
             <div class="download-card animate delay-1">
-                <h3>B OS Edu Pro</h3>
-                <p>Versi lengkap dengan semua fitur premium</p>
-                <a href="#" class="btn"><i class="fas fa-download"></i> Unduh</a>
+                <h3>Pro Edition</h3>
+                <p>Unlock all premium features for advanced learning and productivity.</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Download</a>
             </div>
             <div class="download-card animate delay-2">
-                <h3>B OS Developer</h3>
-                <p>Untuk pengembang yang ingin membuat aplikasi pendidikan</p>
-                <a href="#" class="btn"><i class="fas fa-download"></i> Unduh</a>
+                <h3>Developer Edition</h3>
+                <p>For creators and innovators—build, test, and share your own educational or productivity apps.</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Download</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section" style="background:#f8f9fa; padding:60px 5%; text-align:center;">
+        <h2 class="section-title" style="margin-bottom:1.5rem;">What Makes B OS Special?</h2>
+        <div style="max-width:900px; margin:0 auto; color:#444; font-size:1.08rem;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px;">
+                <div style="flex:1 1 220px; min-width:220px; max-width:300px;">
+                    <i class="fas fa-paint-brush" style="font-size:2rem; color:#1ba339;"></i>
+                    <h4 style="margin:1rem 0 0.5rem;">Modern & Minimalist Look</h4>
+                    <p>Inspired by ChromeOS, B OS offers a clean, distraction-free interface that helps you focus on what matters.</p>
+                </div>
+                <div style="flex:1 1 220px; min-width:220px; max-width:300px;">
+                    <i class="fas fa-sync-alt" style="font-size:2rem; color:#1ba339;"></i>
+                    <h4 style="margin:1rem 0 0.5rem;">Always Up-to-date</h4>
+                    <p>Based on Debian Testing, B OS brings you the latest features and security updates, just like Google’s gLinux.</p>
+                </div>
+                <div style="flex:1 1 220px; min-width:220px; max-width:300px;">
+                    <i class="fas fa-users" style="font-size:2rem; color:#1ba339;"></i>
+                    <h4 style="margin:1rem 0 0.5rem;">Easy for Everyone</h4>
+                    <p>KDE Plasma desktop feels familiar for Windows users, making B OS accessible for all ages and backgrounds.</p>
+                </div>
+                <div style="flex:1 1 220px; min-width:220px; max-width:300px;">
+                    <i class="fas fa-leaf" style="font-size:2rem; color:#1ba339;"></i>
+                    <h4 style="margin:1rem 0 0.5rem;">Eco-Friendly & Lightweight</h4>
+                    <p>Optimized for both new and old hardware, B OS runs fast and smooth, even on modest devices.</p>
+                </div>
+                <div style="flex:1 1 220px; min-width:220px; max-width:300px;">
+                    <i class="fas fa-globe" style="font-size:2rem; color:#1ba339;"></i>
+                    <h4 style="margin:1rem 0 0.5rem;">Open & Global</h4>
+                    <p>Free for everyone, everywhere. B OS supports multiple languages and communities around the world.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -432,7 +498,7 @@
                     <img src="icon.png" alt="MerdekaSoft Logo">
                     <div>MerdekaSoft</div>
                 </div>
-                <p>Sistem Operasi untuk pendidikan Indonesia yang merdeka, mandiri, dan berkualitas.</p>
+                <p>B-OS by Merdekasoft: The OS that empowers learning, creativity, and productivity—open for everyone, everywhere.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -441,11 +507,11 @@
                     <a href="#"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <div class="footer-links"><h3>Produk</h3><ul><li><a href="#">B OS Edu Basic</a></li><li><a href="#">B OS Edu Pro</a></li><li><a href="#">B OS Developer</a></li><li><a href="#">Aplikasi Pendidikan</a></li></ul></div>
-            <div class="footer-links"><h3>Sumber Daya</h3><ul><li><a href="#">Dokumentasi</a></li><li><a href="#">Panduan</a></li><li><a href="#">Blog</a></li><li><a href="#">Komunitas</a></li></ul></div>
-            <div class="footer-links"><h3>Perusahaan</h3><ul><li><a href="#">Tentang Kami</a></li><li><a href="#">Karir</a></li><li><a href="#">Kontak</a></li><li><a href="#">Mitra</a></li></ul></div>
+            <div class="footer-links"><h3>Products</h3><ul><li><a href="#">B-OS Edu Basic</a></li><li><a href="#">B-OS Edu Pro</a></li><li><a href="#">B-OS Developer</a></li><li><a href="#">Productivity Apps</a></li></ul></div>
+            <div class="footer-links"><h3>Resources</h3><ul><li><a href="#">Documentation</a></li><li><a href="#">Guides</a></li><li><a href="#">Blog</a></li><li><a href="#">Community</a></li></ul></div>
+            <div class="footer-links"><h3>Company</h3><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li><li><a href="#">Partners</a></li></ul></div>
         </div>
-        <div class="copyright">&copy; 2025 MerdekaSoft.id - All Rights Reserved</div>
+        <div class="copyright">&copy; 2025 Merdekasoft.id – Imagine. Learn. Create. Share.</div>
     </footer>
 
     <script>
