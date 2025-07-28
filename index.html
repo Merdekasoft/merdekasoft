@@ -247,23 +247,9 @@
         .slogan span { display: block; font-size: 1.1rem; margin-top: 0.8rem; font-weight: 400; opacity: 0.85; }
         
         /* Footer */
-        footer { background-color: var(--theme-footer-bg); color: var(--theme-text-on-dark); padding: 4rem 5% 1.5rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-        .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
-        .footer-logo img { height: 28px; }
-        .footer-logo div { font-weight: 500; color: var(--theme-text-on-dark); }
-        .footer-about p { opacity: 0.75; margin-bottom: 1rem; line-height: 1.6; font-size: 0.85rem; }
-        .social-links { display: flex; gap: 12px; }
-        .social-links a { color: var(--theme-text-on-dark); font-size: 1.1rem; opacity: 0.7; transition: var(--theme-transition); }
-        .social-links a:hover { opacity: 1; color: var(--theme-icon-black); }
-        .footer-links h3 { color: var(--theme-text-on-dark); margin-bottom: 1rem; font-size: 1rem; font-weight: 500; }
-        .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 10px; }
-        .footer-links ul li a { color: rgba(240,240,240,0.7); text-decoration: none; transition: var(--theme-transition); font-size: 0.85rem; }
-        .footer-links ul li a:hover { color: var(--theme-primary-accent); padding-left: 3px; }
         .copyright {
-            text-align: center; margin-top: 3rem; padding-top: 1.5rem; 
-            border-top: 1px solid rgba(255,255,255,0.1); color: rgba(240,240,240,0.6); font-size: 0.8rem; 
+            background:#333; color:rgba(240,240,240,0.6); text-align:center; margin-top:3rem; padding:2rem 0 1.5rem; 
+            border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem; 
         }
         
         /* Mobile Styles */
@@ -318,18 +304,17 @@
     
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 <img src="icon.png" alt="MerdekaSoft Logo">
                 <div class="logo-text">MerdekaSoft</div>
             </a>
             <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="#produk">Products</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#story">Story</a></li>
                     <li><a href="#fitur">Features</a></li>
-                    <li><a href="#unduh">Download</a></li>
-                    <li><a href="#tentang">About</a></li>
-                    <li><a href="#kontak">Contact</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
                 </ul>
             </nav>
         </div>
@@ -351,7 +336,7 @@
         </div>
     </section>
 
-    <section class="story-section" style="background:#fff; padding: 60px 5%; text-align:center;">
+    <section class="story-section" id="story" style="background:#fff; padding: 60px 5%; text-align:center;">
         <h2 class="section-title" style="margin-bottom:1.5rem;">The Story Behind B OS</h2>
         <div style="max-width:800px; margin:0 auto; color:#444; font-size:1.08rem;">
             <p style="margin-bottom:1.2rem;">
@@ -424,7 +409,7 @@
         </div>
     </section>
     
-    <section class="benefits-section" style="background:#f8f9fa; padding:60px 5%; text-align:center;">
+    <section class="benefits-section" id="benefits" style="background:#f8f9fa; padding:60px 5%; text-align:center;">
         <h2 class="section-title" style="margin-bottom:1.5rem;">What Makes B OS Special?</h2>
         <div style="max-width:900px; margin:0 auto; color:#444; font-size:1.08rem;">
             <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px;">
@@ -457,28 +442,9 @@
         </div>
     </section>
     
-    <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <div class="footer-logo">
-                    <img src="icon.png" alt="MerdekaSoft Logo">
-                    <div>MerdekaSoft</div>
-                </div>
-                <p>B-OS by Merdekasoft: The OS that empowers learning, creativity, and productivity—open for everyone, everywhere.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-            <div class="footer-links"><h3>Products</h3><ul><li><a href="#">B-OS Edu Basic</a></li><li><a href="#">B-OS Edu Pro</a></li><li><a href="#">B-OS Developer</a></li><li><a href="#">Productivity Apps</a></li></ul></div>
-            <div class="footer-links"><h3>Resources</h3><ul><li><a href="#">Documentation</a></li><li><a href="#">Guides</a></li><li><a href="#">Blog</a></li><li><a href="#">Community</a></li></ul></div>
-            <div class="footer-links"><h3>Company</h3><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li><li><a href="#">Partners</a></li></ul></div>
-        </div>
-        <div class="copyright">&copy; 2025 Merdekasoft.id – Imagine. Learn. Create. Share.</div>
-    </footer>
+    <div class="copyright" style="background:#333; color:rgba(240,240,240,0.6); text-align:center; margin-top:3rem; padding:2rem 0 1.5rem; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem;">
+        &copy; 2025 Merdekasoft.id – Imagine. Learn. Create. Share.
+    </div>
 
     <script>
         // Mobile menu toggle
