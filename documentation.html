@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation & Support - Merdekasoft</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="documentation.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="logoLink">
+                <img src="icon.png" alt="MerdekaSoft Logo">
+                <div class="logo-text">MerdekaSoft</div>
+            </a>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="documentation.html" class="active">Documentation & Support</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="doc-header">
+            <h1>Documentation & Support</h1>
+            <div class="note" id="prototype-note">Important: The ISO currently available for download is a <strong>prototype build</strong>. It is intended for testing and feedback only — expect bugs, incomplete features, and possible data loss. Do not use this build in production systems.</div>
+            <p class="lead">Guides, troubleshooting, and resources to help you install, configure, and contribute to Merdekasoft products.</p>
+        </div>
+
+        <aside class="toc">
+            <strong>On this page</strong>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#installation">Installation</a></li>
+                    <li><a href="#rufus">Rufus (Windows)</a></li>
+                    <li><a href="#ventoy">Ventoy (Windows / Linux)</a></li>
+                <li><a href="#requirements">System Requirements</a></li>
+                <li><a href="#post-install">Post-install Setup</a></li>
+                <li><a href="#features">Key Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#contribute">Contribute</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </aside>
+
+        <section id="getting-started" class="doc-section">
+            <h2 class="section-header">Getting Started</h2>
+            <p>Welcome — this short guide helps you download and try B OS quickly using the Live session, or perform a full installation.</p>
+            <p class="note">Prototype notice: The build currently published is a prototype. Use it only for testing and evaluation. Please back up important data and test in a virtual machine or spare hardware where possible.</p>
+            <ol>
+                <li>Download the latest ISO from our <a href="https://merdekasoft.id/#download" target="_blank" rel="noopener">download page</a> (merdekasoft.id).</li>
+                <li>Verify the ISO checksum (recommended).</li>
+                <li>Create a bootable USB (see <em>Installation</em> section).</li>
+                <li>Boot into the Live environment to test hardware compatibility.</li>
+                <li>Run installer to install to disk when you are ready.</li>
+            </ol>
+        </section>
+
+        <section id="installation" class="doc-section">
+            <h2 class="section-header">Installation</h2>
+            <h3>Download</h3>
+            <p>Get the prototype ISO from our releases. This build is an early prototype and may change frequently. We publish checksums with each release — always compare the checksum shown on the download page before testing.</p>
+            <p>You can download the prototype ISO from our site: <a href="https://merdekasoft.id/#download" target="_blank" rel="noopener">https://merdekasoft.id/#download</a></p>
+
+            <h3>Verify ISO (Checksums)</h3>
+            <p>We publish SHA256 checksums with each release. To verify your download, use your operating system's graphical checksum utility or a file-hash tool and compare the result with the checksum published on the download page.</p>
+
+            <h3>Create bootable USB (recommended)</h3>
+            <p>Use a graphical USB writer to create a bootable USB from the downloaded ISO. Popular, user-friendly tools include:</p>
+            <ul>
+                <li>BalenaEtcher (cross-platform)</li>
+                <li>Rufus (Windows)</li>
+                <li>Ventoy (Windows / Linux)</li>
+            </ul>
+            <p>These tools provide a safe, guided workflow to write the ISO to your USB drive. Be careful — writing an image will erase the target drive.</p>
+
+            <h3>Installation steps</h3>
+            <ol>
+                <li>Boot from the USB and select "Try Live" to test.</li>
+                <li>On the Live desktop, double-click the installer icon.</li>
+                <li>Follow installer: choose language, time zone, keyboard layout.</li>
+                <li>Choose installation type: erase disk or manual partitioning (advanced).</li>
+                <li>Create user account and complete installation. Reboot when finished.</li>
+            </ol>
+
+            <h3 id="rufus">Rufus (Windows)</h3>
+            <p>Rufus is a small Windows utility that helps create bootable USB drives from ISOs.</p>
+                        <p class="note">Prototype reminder: When writing the prototype ISO, remember this is an early build — use test hardware or a virtual machine and do not rely on it for production data.</p>
+            <ol>
+                <li>Download Rufus from the official site: <a href="https://rufus.ie/" target="_blank" rel="noopener">https://rufus.ie/</a></li>
+                <li>Run Rufus (no installation required for the portable build).</li>
+                <li>Insert a USB drive and select it under "Device".</li>
+                <li>Under "Boot selection", choose "Disk or ISO image (Please select)" and click <em>Select</em> to pick <code>B-OS-live-prototype-amd64.hybrid.iso</code>.</li>
+                <li>Leave partition scheme and target system as recommended (Rufus usually detects correct defaults for BIOS/UEFI). If you need UEFI-only, choose GPT; for older BIOS choose MBR.</li>
+                <li>Click <strong>Start</strong> and follow prompts. If Rufus offers write-mode choices, choose the recommended ISO/image mode unless you have a specific need to change it.</li>
+                <li>Wait until Rufus finishes, then safely eject the USB drive.</li>
+            </ol>
+            <p class="note">Warning: This will erase the target USB drive. Make sure you selected the correct device.</p>
+
+            <h3 id="ventoy">Ventoy (Windows / Linux)</h3>
+            <p>Ventoy lets you create a bootable USB that can contain multiple ISO files — great for maintaining several installers on one drive.</p>
+                        <p class="note">Prototype reminder: The ISO you copy to Ventoy is a prototype. Please treat it as experimental and keep backups of any important data.</p>
+            <ol>
+                <li>Download Ventoy from the official project: <a href="https://www.ventoy.net/" target="_blank" rel="noopener">https://www.ventoy.net/</a></li>
+                <li>Follow the platform instructions provided on Ventoy's website:
+                    <ul>
+                        <li>Windows: use the Ventoy utility to install Ventoy to the USB device.</li>
+                        <li>Linux: follow the installation steps described on the Ventoy site for Linux systems.</li>
+                    </ul>
+                </li>
+                <li>Install Ventoy to the USB device (this formats the drive).</li>
+                <li>After installation, simply copy <code>B-OS-live-prototype-amd64.hybrid.iso</code> (and other ISOs) to the USB partition created by Ventoy.</li>
+                <li>Boot from the USB and Ventoy will present a menu to choose which ISO to boot.</li>
+            </ol>
+            <p class="note">Ventoy preserves the USB layout so you can add or remove ISOs without reformatting.</p>
+        </section>
+
+        <section id="requirements" class="doc-section">
+            <h2 class="section-header">System Requirements</h2>
+            <ul>
+                <li>64-bit x86_64 CPU (Intel/AMD)</li>
+                <li>RAM: 4 GB minimum (8 GB recommended)</li>
+                <li>Disk: 20 GB minimum (40 GB recommended)</li>
+                <li>UEFI or Legacy BIOS (Secure Boot may need to be disabled for this prototype)</li>
+            </ul>
+            <p class="note">This is a prototype build — please test on spare hardware or in a virtual machine and back up important data.</p>
+        </section>
+
+        <section id="post-install" class="doc-section">
+            <h2 class="section-header">Post-install Setup</h2>
+            <p>After installing, we recommend:</p>
+            <ul>
+                <li>Run system updates using your system's Software Updater or package manager GUI.</li>
+                <li>Install proprietary drivers if needed using the system's Software & Updates or additional driver tools provided by your hardware vendor. On Debian Testing derivatives a dedicated "Driver Manager" may not be available; consult the documentation for your device or the vendor website for driver packages and instructions.</li>
+                <li>Set up backups and restore points.</li>
+                <li>Explore preinstalled apps and the app installer for additional software.</li>
+            </ul>
+        </section>
+
+        <section id="features" class="doc-section">
+            <h2 class="section-header">Key Features</h2>
+            <ul>
+                <li>Live session: try without installing</li>
+                <li>App installer supporting .deb, AppImage, Flatpak</li>
+                <li>Security tools integrated (updates & scanners)</li>
+                <li>Local chat and media utilities</li>
+                <li>Multi-language support</li>
+            </ul>
+        </section>
+
+        <section id="faq" class="doc-section">
+            <h2 class="section-header">FAQ</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-toggle">How do I upgrade between releases? <span class="chev">›</span></button>
+                    <div class="faq-content">For major version changes we recommend a fresh install. For regular updates, use the system's graphical Software Updater. The updater will show available package updates and guide you through installing them.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">Can I dual-boot B OS with Windows? <span class="chev">›</span></button>
+                    <div class="faq-content">Yes — choose manual partitioning during install and make sure to back up all important data first. If you are unsure, test the installer in a virtual machine or on spare hardware. Our documentation includes general advice but always review your device's manufacturer guidance for boot options and UEFI settings.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">Where should I report bugs or send feedback? <span class="chev">›</span></button>
+                    <div class="faq-content">Open issues on our issue tracker (link in footer) or use the support email. When reporting, include: a clear title, steps to reproduce, what you expected, what happened, screenshots or short screen recordings, and the environment (device model, BIOS/UEFI, and whether you used Live or full install). Since the current release is a prototype, please include the prototype version or ISO filename when possible.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">How can I verify the ISO I downloaded? <span class="chev">›</span></button>
+                    <div class="faq-content">We publish checksums with every release on the download page. Use a graphical checksum tool or file-hash utility to compute the checksum of the downloaded file and compare it to the value on the site. If the checksums don't match, re-download the ISO and avoid using the corrupted copy.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">What are the known limitations of the prototype build? <span class="chev">›</span></button>
+                    <div class="faq-content">The prototype may include incomplete features, temporary UI text, driver limitations, or installer rough edges. Hardware support can be limited (especially new Wi‑Fi or GPU models). Expect frequent updates; do not use the prototype on critical systems. Check the Changelog and the Troubleshooting section for currently tracked issues.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">Will my data be preserved if I install? <span class="chev">›</span></button>
+                    <div class="faq-content">Installing to disk can overwrite existing data if you choose to erase the disk. Always back up important files before installing. If you want to try without affecting your system, use the Live session or test inside a virtual machine.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">How do I install additional drivers (Wi‑Fi, GPU)? <span class="chev">›</span></button>
+                    <div class="faq-content">Use the system's Software & Updates (if present) or vendor-provided utilities to locate and install proprietary drivers. If hardware isn't detected in the Live session, include device details when filing a bug so developers can investigate driver support.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">How can I contribute or submit documentation changes? <span class="chev">›</span></button>
+                    <div class="faq-content">We welcome contributions. Fork the repository, make your changes (including docs), and submit a pull request. See <strong>CONTRIBUTING.md</strong> for style, testing, and review guidelines. Small doc fixes (typos, clarifications) are especially helpful for new users.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">Can I use third-party apps and package formats? <span class="chev">›</span></button>
+                    <div class="faq-content">Yes. The app installer supports common formats like .deb, AppImage, and Flatpak. Use the app installer GUI to add applications and check sandboxing/security options when available.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">How do I request a new feature? <span class="chev">›</span></button>
+                    <div class="faq-content">Open a feature-request on the issue tracker with a clear description, use-case, and any mockups or examples. Label it as a feature request so maintainers can triage it appropriately.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-toggle">Where can I find more detailed help if nothing here solves the problem? <span class="chev">›</span></button>
+                    <div class="faq-content">Use our community forum, support email, or issue tracker. For faster help, include screenshots, logs, and steps you've already tried. Community volunteers and maintainers monitor these channels and will guide you through troubleshooting.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="troubleshooting" class="doc-section">
+            <h2 class="section-header">Troubleshooting</h2>
+            <h3>Boot issues</h3>
+            <p>If the system doesn't boot from USB, check:</p>
+            <ul>
+                <li>UEFI/Legacy boot mode in BIOS</li>
+                <li>USB device integrity and proper write using a recommended USB writing tool (see Installation section)</li>
+            </ul>
+
+            <h3>Wi‑Fi not working</h3>
+            <p>Try installing additional drivers using the system's Software & Updates or vendor-provided driver utilities. If those aren't available, connect via Ethernet to the internet and consult the vendor website or documentation for driver packages and installation instructions.</p>
+
+            <h3>Display problems</h3>
+            <p>Use safe graphics mode or install vendor drivers (NVIDIA/AMD) from vendor-provided utilities or instructions. If you are unsure, test in the Live session and include hardware details when reporting issues.</p>
+        </section>
+
+        <section id="contribute" class="doc-section">
+            <h2 class="section-header">Contribute</h2>
+            <p>Want to help? Report issues or open a pull request on our GitHub: <a href="https://github.com/merdekasoft" target="_blank" rel="noopener">github.com/merdekasoft</a>. Check the repository for contribution guidelines.</p>
+        </section>
+
+        <section id="support" class="doc-section support">
+            <h2 class="section-header">Support</h2>
+            <p>If you need help beyond documentation:</p>
+            <ul>
+                <li>Email: <a href="mailto:merdekasoft@gmail.com">merdekasoft@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/merdekasoft" target="_blank" rel="noopener">https://github.com/merdekasoft</a> (issues, source, contributions)</li>
+            </ul>
+            <p class="note">Because the current release is a prototype, please include detailed reproduction steps, logs, and the environment you used when reporting bugs — this helps the development team address issues faster.</p>
+        </section>
+
+    <!-- Changelog removed as requested -->
+    </main>
+
+    <footer>
+        <div class="copyright">&copy; 2025 Merdekasoft. All rights reserved. 
+            <a href="#" style="color:var(--theme-primary-accent);">Issue tracker</a>
+        </div>
+    </footer>
+
+    <script src="documentation.js"></script>
+</body>
+</html>
