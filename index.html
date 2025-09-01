@@ -307,7 +307,7 @@
     
     <header>
         <div class="nav-container">
-            <a href="#home" class="logo">
+            <a href="index.html" class="logo" id="logoLink">
                 <img src="icon.png" alt="MerdekaSoft Logo">
                 <div class="logo-text">MerdekaSoft</div>
             </a>
@@ -319,7 +319,7 @@
                     <li><a href="#fitur">Features</a></li>
                     <li><a href="#benefits">Benefits</a></li>
                     <li><a href="#unduh">Download</a></li>
-                    <li><a href="https://imgur.com/gallery/b-os-screenshot-DTrqPJk" target="_blank" rel="noopener">Screenshots</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
                 </ul>
             </nav>
         </div>
@@ -341,6 +341,17 @@
         </div>
     </section>
 
+    <!-- Screenshots preview on homepage (moved here so it shows on home) -->
+    <section id="screenshots" style="background:#fff; padding:20px 5%; text-align:center;">
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-embed" style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <blockquote class="imgur-embed-pub" lang="en" data-id="a/DTrqPJk">
+                <a href="//imgur.com/a/DTrqPJk">B OS screenshot</a>
+            </blockquote>
+        </div>
+        <!-- Imgur script is loaded once at the end of the main script -->
+    </section>
+    
     <section class="story-section" id="story" style="background:#fff; padding: 60px 5%; text-align:center;">
         <h2 class="section-title">What is B OS?</h2>
         <div style="max-width:800px; margin:0 auto; color:#444; font-size:1.08rem;">
@@ -422,41 +433,6 @@
         </div>
     </section>
     
-    <section id="unduh" class="download-card" style="background:#fff; padding:60px 5%; text-align:center;">
-        <h2 class="section-title">Download B OS</h2>
-        <div style="max-width:700px; margin:0 auto; color:#444; font-size:1.08rem;">
-            <p>
-                Download the latest B OS ISO and try it on your device. Compatibility may vary depending on hardware and configuration.
-            </p>
-            <a href="https://drive.google.com/file/d/13P4vtL3A3ASdsycLFYDT57SzioNmPWaf/view?usp=drive_link"
-               class="btn"
-               style="margin-bottom:1.2rem; background-color:#1ba339; border-color:#1ba339; color:#fff;"
-               download>
-                <i class="fas fa-download"></i> Download via Google Drive
-            </a>
-            <br>
-            <a href="https://sourceforge.net/projects/merdekasoft/files/latest/download" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:1.2rem;">
-                <img alt="Download B OS" src="https://a.fsdn.com/con/app/sf-download-button" width="276" height="48" srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x">
-            </a>
-            <p>
-                <b>How to use:</b> Run B OS directly (Live) or install it on your computer.<br>
-                <b>Dual Boot:</b> You can install B OS alongside your current operating system.<br>
-                <a href="https://merdekasoft.id/docs" style="color:var(--theme-primary-accent); text-decoration:underline;">Installation Guide & FAQ</a>
-            </p>
-            <p style="font-size:0.95em; color:#888;">
-                <em>Disclaimer: Compatibility and performance may vary depending on your hardware and use case. Please refer to the documentation for supported devices, installation instructions, and licensing information.</em>
-            </p>
-        </div>
-    </section>
-
-    <section class="slogan-section">
-        <div class="slogan animate">
-            <span>
-                <strong>B OS is a platform for learning, creativity, and connection. Try it and see the difference.</strong>
-            </span>
-        </div>
-    </section>
-    
     <section class="benefits-section" id="benefits" style="background:#f8f9fa; padding:60px 5%; text-align:center;">
         <h2 class="section-title">What Makes B OS Special?</h2>
         <div style="max-width:900px; margin:0 auto; color:#444; font-size:1.08rem;">
@@ -505,6 +481,41 @@
         </div>
     </section>
     
+    <section class="slogan-section">
+        <div class="slogan animate">
+            <span>
+                <strong>B OS is a platform for learning, creativity, and connection. Try it and see the difference.</strong>
+            </span>
+        </div>
+    </section>
+    
+    <section id="unduh" class="download-card" style="background:#fff; padding:60px 5%; text-align:center;">
+        <h2 class="section-title">Download B OS</h2>
+        <div style="max-width:700px; margin:0 auto; color:#444; font-size:1.08rem;">
+            <p>
+                Download the latest B OS ISO and try it on your device. Compatibility may vary depending on hardware and configuration.
+            </p>
+            <a href="https://drive.google.com/file/d/13P4vtL3A3ASdsycLFYDT57SzioNmPWaf/view?usp=drive_link"
+               class="btn"
+               style="margin-bottom:1.2rem; background-color:#1ba339; border-color:#1ba339; color:#fff;"
+               download>
+                <i class="fas fa-download"></i> Download via Google Drive
+            </a>
+            <br>
+            <a href="https://sourceforge.net/projects/merdekasoft/files/latest/download" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:1.2rem;">
+                <img alt="Download B OS" src="https://a.fsdn.com/con/app/sf-download-button" width="276" height="48" srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x">
+            </a>
+            <p>
+                <b>How to use:</b> Run B OS directly (Live) or install it on your computer.<br>
+                <b>Dual Boot:</b> You can install B OS alongside your current operating system.<br>
+                <a href="https://merdekasoft.id/docs" style="color:var(--theme-primary-accent); text-decoration:underline;">Installation Guide & FAQ</a>
+            </p>
+            <p style="font-size:0.95em; color:#888;">
+                <em>Disclaimer: Compatibility and performance may vary depending on your hardware and use case. Please refer to the documentation for supported devices, installation instructions, and licensing information.</em>
+            </p>
+        </div>
+    </section>
+
     <footer>
         <div class="copyright" style="background:#333; color:rgba(240,240,240,0.7); text-align:center; margin-top:3rem; padding:2rem 0 1.5rem; border-top:1px solid rgba(255,255,255,0.1); font-size:0.9rem;">
             &copy; 2025 Merdekasoft.id – Imagine. Learn. Create. Share.<br>
@@ -530,6 +541,22 @@
                 menuToggle.innerHTML = isActive 
                     ? '<i class="fas fa-times"></i>' 
                     : '<i class="fas fa-bars"></i>';
+            });
+        }
+
+        // Logo (top-left) -> go to home (smooth scroll) and close mobile nav if open
+        const logoLink = document.getElementById('logoLink');
+        if (logoLink) {
+            logoLink.addEventListener('click', function(e) {
+                // Prevent full page reload when clicked; smooth-scroll to top / home section
+                e.preventDefault();
+                if (mainNav && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    if (menuToggle) menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // update URL to reflect actual home link without reloading
+                try { history.replaceState(null, '', logoLink.getAttribute('href')); } catch (err) {}
             });
         }
 
@@ -572,6 +599,18 @@
                 observer.observe(el);
             });
         }
+
+        // Load Imgur embed script once (needed for the blockquote to render)
+        (function loadImgurEmbed(){
+            if (!document.getElementById('imgur-embed-script')) {
+                const s = document.createElement('script');
+                s.id = 'imgur-embed-script';
+                s.async = true;
+                s.src = 'https://s.imgur.com/min/embed.js';
+                s.charset = 'utf-8';
+                document.body.appendChild(s);
+            }
+        })();
     </script>
 </body>
 </html>
