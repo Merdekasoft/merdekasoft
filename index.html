@@ -317,6 +317,7 @@
                     <li><a href="#fitur">Features</a></li>
                     <li><a href="#benefits">Benefits</a></li>
                     <li><a href="#unduh">Download</a></li>
+                    <li><a href="https://imgur.com/gallery/b-os-screenshot-DTrqPJk" target="_blank" rel="noopener">Screenshots</a></li>
                 </ul>
             </nav>
         </div>
@@ -367,14 +368,14 @@
                 <p>Based on Debian Testing and recent drivers for speed and compatibility.</p>
             </div>
             <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-life-ring"></i></div>
-                <h3>Rescue & Restore</h3>
-                <p>Includes tools to help recover deleted files. Supports various file systems.</p>
+                <div class="feature-icon"><i class="fas fa-shield-virus"></i></div>
+                <h3>Antivirus</h3>
+                <p>Stay safe with a powerful antivirus built using PySide6 and ClamAV. Enjoy real-time protection and an intuitive interface to scan, detect, and remove threats with ease.</p>
             </div>
             <div class="feature-card animate">
                 <div class="feature-icon"><i class="fas fa-comments"></i></div>
                 <h3>Local Chat</h3>
-                <p>Communicate with others on your network using built-in chat tools.</p>
+                <p>Communicate with others on your network using <strong>Bmessenger</strong>, a built-in chat tool for fast and easy local messaging.</p>
             </div>
             <div class="feature-card animate delay-1">
                 <div class="feature-icon"><i class="fas fa-images"></i></div>
@@ -391,10 +392,10 @@
                 <h3>App Installer</h3>
                 <p>Install software easily. Supports .deb, AppImage, Flatpak, and more.</p>
             </div>
-            <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
-                <h3>Download Manager</h3>
-                <p>Manage downloads and large files with the built-in accelerator.</p>
+            <div class="feature-card animate">
+                <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                <h3>Easy Maintenance</h3>
+                <p>Maintain your system effortlessly with <strong>fixrun</strong>—no need to open the terminal for common fixes and updates.</p>
             </div>
             <div class="feature-card animate delay-2">
                 <div class="feature-icon"><i class="fas fa-gift"></i></div>
@@ -405,21 +406,6 @@
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Security Features</h3>
                 <p>Includes security tools, updates, and system protections.</p>
-            </div>
-            <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-sync"></i></div>
-                <h3>Automatic Updates</h3>
-                <p>B OS can keep your system and apps current with improvements and patches.</p>
-            </div>
-            <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-cloud"></i></div>
-                <h3>Cloud Integration</h3>
-                <p>Connect to popular cloud services for storage and collaboration.</p>
-            </div>
-            <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-cogs"></i></div>
-                <h3>Customizable Desktop</h3>
-                <p>Personalize your workspace with themes, widgets, and layouts.</p>
             </div>
             <div class="feature-card animate delay-1">
                 <div class="feature-icon"><i class="fas fa-language"></i></div>
@@ -568,6 +554,21 @@
                     entry.target.style.opacity = 1;
                     entry.target.style.transform = 'translateY(0)';
                     observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(15px)'; 
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out'; 
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+</html>
+</html>
                 }
             });
         }, { threshold: 0.1 });
