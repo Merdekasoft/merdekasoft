@@ -158,13 +158,13 @@
             filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); 
         }
 
-        .hero .btn[href="#unduh"], 
+        .hero .btn[href="#download"], 
         .download-card .btn {
             background-color: var(--theme-download-btn-bg); 
             border-color: var(--theme-download-btn-bg); 
             color: var(--theme-text-on-accent); 
         }
-        .hero .btn[href="#unduh"]:hover,
+        .hero .btn[href="#download"]:hover,
         .download-card .btn:hover {
             background-color: var(--theme-download-btn-hover-bg); 
             border-color: var(--theme-download-btn-hover-bg);
@@ -225,7 +225,7 @@
         /* === MODIFIED FEATURES GRID === */
         .features-grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); /* Selalu 3 kolom */
+            grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
             gap: 25px; 
         }
         /* === END MODIFIED FEATURES GRID === */
@@ -260,9 +260,8 @@
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1.1rem; }
             .slogan { font-size: 1.6rem; }
-            /* Jika diperlukan, Anda bisa menyesuaikan .features-grid di sini untuk layar medium,
-               misal menjadi 2 kolom, meskipun permintaan awal adalah selalu 3 kolom.
-               Untuk saat ini, saya biarkan 3 kolom sesuai permintaan. */
+            /* If needed, you can adjust .features-grid here for medium screens,
+               e.g. switch to 2 columns. Currently it remains 3 columns per design. */
         }
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
@@ -279,16 +278,16 @@
             .hero { padding: 4rem 5% 5rem; }
             .hero h1 { font-size: 1.8rem; }
             .btn-group { flex-direction: column; width: 100%; }
-            .btn, .hero .btn[href="#unduh"], .download-card .btn { width: 100%; } 
+            .btn, .hero .btn[href="#download"], .download-card .btn { width: 100%; } 
             .section-title { font-size: 1.6rem; }
             .slogan { font-size: 1.4rem; }
             .slogan span { font-size: 0.95rem; }
             .footer-container { grid-template-columns: 1fr; }
 
-            /* Untuk layar sangat kecil, 3 kolom mungkin terlalu sempit.
-               Anda bisa mengubah .features-grid menjadi 1 kolom di sini jika mau. */
+            /* For very small screens, 3 columns may be too narrow.
+               You can change .features-grid to 1 column here if desired. */
             .features-grid {
-                grid-template-columns: 1fr; /* Menjadi 1 kolom di layar kecil */
+                grid-template-columns: 1fr; /* becomes 1 column on small screens */
             }
         }
         
@@ -315,11 +314,11 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
                     <li><a href="#story">About</a></li>
                     <li><a href="#fitur">Features</a></li>
                     <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#unduh">Download</a></li>
-                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#download">Download</a></li>
                 </ul>
             </nav>
         </div>
@@ -334,7 +333,7 @@
             Free and open source. Explore a new approach to productivity and creativity—try B OS today.
         </p>
         <div class="btn-group animate delay-3">
-            <a href="#unduh" class="btn"><i class="fas fa-download"></i> Download B OS</a>
+            <a href="#download" class="btn"><i class="fas fa-download"></i> Download B OS</a>
             <a href="#fitur" class="btn btn-outline">
                 <span><i class="fas fa-play-circle"></i> Live Demo</span>
             </a>
@@ -489,7 +488,7 @@
         </div>
     </section>
     
-    <section id="unduh" class="download-card" style="background:#fff; padding:60px 5%; text-align:center;">
+    <section id="download" class="download-card" style="background:#fff; padding:60px 5%; text-align:center;">
         <h2 class="section-title">Download B OS</h2>
         <div style="max-width:700px; margin:0 auto; color:#444; font-size:1.08rem;">
             <p>
@@ -613,4 +612,5 @@
         })();
     </script>
 </body>
+</html>
 </html>
