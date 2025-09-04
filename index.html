@@ -21,7 +21,6 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#screenshots">Screenshots</a></li>
                     <li><a href="#story">About</a></li>
                     <li><a href="#fitur">Features</a></li>
                     <li><a href="#benefits">Benefits</a></li>
@@ -47,18 +46,6 @@
             </a>
         </div>
     </section>
-
-    <!-- Screenshots preview on homepage (moved here so it shows on home) -->
-    <section id="screenshots" style="background:#fff; padding:20px 5%; text-align:center;">
-        <img src="https://i.imgur.com/W3E57mV.png" alt="B OS Preview" style="max-width:100%; height:auto; margin-bottom:18px;">
-        <h2 class="section-title">Screenshots</h2>
-        <div class="screenshot-embed" style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-            <blockquote class="imgur-embed-pub" lang="en" data-id="a/DTrqPJk">
-                <a href="//imgur.com/a/DTrqPJk">B OS screenshot</a>
-            </blockquote>
-        </div>
-        <!-- Imgur script is loaded once at the end of the main script -->
-    </section>
     
     <section class="story-section" id="story" style="background:#fff; padding: 60px 5%; text-align:center;">
         <h2 class="section-title">What is B OS?</h2>
@@ -79,65 +66,72 @@
         <h2 class="section-title">Key Features</h2>
         <div class="features-grid">
             <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h3>Live Experience</h3>
-                <p>Try B OS without installation. Explore features safely, anytime. <br><em>Features may vary depending on hardware and configuration.</em></p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/t9EfF5o.png" alt="Live Experience icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>Live Experience</h3>
+            <p style="max-width:600px; margin:0 auto;">Try B OS without installation. Explore features safely, anytime. <br><em>Features may vary depending on hardware and configuration.</em></p>
             </div>
             <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-rocket"></i></div>
-                <h3>Modern Technology</h3>
-                <p>Based on Debian Testing and recent drivers for speed and compatibility.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/j8A3DUC.png" alt="Modern Technology icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>Modern Technology</h3>
+            <p style="max-width:600px; margin:0 auto;">Based on Debian Testing and recent drivers for speed and compatibility.</p>
             </div>
             <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-shield-virus"></i></div>
-                <h3>Antivirus</h3>
-                <p>Stay safe with a powerful antivirus built using PySide6 and ClamAV. Enjoy real-time protection and an intuitive interface to scan, detect, and remove threats with ease.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/AdpKb48.png" alt="Antivirus icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>Antivirus</h3>
+            <p style="max-width:600px; margin:0 auto;">Stay safe with a powerful antivirus built using PySide6 and ClamAV. Enjoy real-time protection and an intuitive interface to scan, detect, and remove threats with ease.</p>
             </div>
             <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-comments"></i></div>
-                <h3>Local Chat</h3>
-                <p>Communicate with others on your network using <strong>Bmessenger</strong>, a built-in chat tool for fast and easy local messaging.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/yk1D8th.png" alt="Local Chat icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>Local Chat</h3>
+            <p style="max-width:600px; margin:0 auto;">Communicate with others on your network using <strong>Bmessenger</strong>, a built-in chat tool for fast and easy local messaging.</p>
             </div>
             <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-images"></i></div>
-                <h3>Photo Printing</h3>
-                <p>Print photos in various sizes. Compatible with many printers.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/f4KUxcv.png" alt="Photo Printing icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>Photo Printing</h3>
+            <p style="max-width:600px; margin:0 auto;">Print photos in various sizes. Compatible with many printers.</p>
             </div>
             <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-                <h3>App Framework</h3>
-                <p>Develop and run apps with KDE and PySide6. Access open-source applications.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/19A6fNl.png" alt="App Framework icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>App Framework</h3>
+            <p style="max-width:600px; margin:0 auto;">Develop and run apps with KDE and PySide6. Access open-source applications.</p>
             </div>
             <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-magic"></i></div>
-                <h3>App Installer</h3>
-                <p>Install software easily. Supports .deb, AppImage, Flatpak, and more.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/xts2x54.png" alt="App Installer icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>App Installer</h3>
+            <p style="max-width:600px; margin:0 auto;">Install software easily. Supports .deb, AppImage, Flatpak, and more.</p>
             </div>
             <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-tools"></i></div>
-                <h3>Easy Maintenance</h3>
-                <p>Maintain your system effortlessly with <strong>fixrun</strong>—common fixes and updates are available through the graphical interface.</p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/yhJSHds.png" alt="Easy Maintenance icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
+            </div>
+            <h3>Easy Maintenance</h3>
+            <p style="max-width:600px; margin:0 auto;">Maintain your system effortlessly with <strong>fixrun</strong>—common fixes and updates are available through the graphical interface.</p>
             </div>
             <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-gift"></i></div>
-                <h3>No Cost</h3>
-                <p>B OS is open source and available to download. <br><em>No subscription is required for the base system. Some third-party apps may have their own licenses.</em></p>
+            <div class="feature-icon" style="width:100%; max-width:600px; margin:0 auto 12px; display:flex; justify-content:center; align-items:center;">
+            <img src="https://i.imgur.com/UjZ1Bmx.png" alt="No Cost icon" loading="lazy" style="width:100%; max-width:600px; height:auto; object-fit:contain; display:block;">
             </div>
-            <div class="feature-card animate">
-                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Security Features</h3>
-                <p>Includes security tools, updates, and system protections.</p>
+            <h3>No Cost</h3>
+            <p style="max-width:600px; margin:0 auto;">B OS is open source and available to download. <br><em>No subscription is required for the base system. Some third-party apps may have their own licenses.</em></p>
             </div>
-            <div class="feature-card animate delay-1">
-                <div class="feature-icon"><i class="fas fa-language"></i></div>
-                <h3>Multi-language Support</h3>
-                <p>Use B OS in your preferred language. Supports many languages.</p>
-            </div>
-            <div class="feature-card animate delay-2">
-                <div class="feature-icon"><i class="fas fa-plug"></i></div>
-                <h3>Hardware Compatibility</h3>
-                <p>Runs on various laptops, desktops, and tablets. <br><em>See documentation for supported devices and limitations.</em></p>
-            </div>
+            
+           
+            
+            
         </div>
     </section>
     
