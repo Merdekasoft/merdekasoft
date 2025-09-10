@@ -52,7 +52,7 @@
     <section class="hero" id="home">
         <h1 class="animate">🚀 B OS – Beautiful, Effective, Efficient</h1>
         <p class="animate delay-1">
-            B OS is a Debian-based Linux distribution powered by KDE. It combines the freedom of open source with a desktop experience that is Beautiful, Effective, and Efficient—secure, fast, and user-friendly, giving you full control of your digital life.
+            B OS is not just an operating system. It is a movement for digital freedom—created for those who want to break free from censorship, surveillance, and technological monopoly. <br><b>B OS stands for your right to privacy, dignity, and open collaboration.</b> Through the power of open source, we fight for justice and build a future where everyone is empowered and respected.
         </p>
         <div class="btn-group animate delay-3">
             <a href="#download" class="btn"><i class="fas fa-download"></i> Free Download B OS</a>
@@ -62,20 +62,20 @@
         </div>
         <div class="aio-image-container animate delay-2" style="max-width:700px; margin:0 auto; text-align:center; background:transparent;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhblV3ktgtQpaZsdtnPk26I1e9ju15RmoioZaGIA7CfbJBMNhvom5cw2EpVxRit8jaGO1CGpQnZhCaM1ZhfBYuYlYrtfCVfpXH6gaALNw1R-M2AgeNmOwqau-rdqyZLsBnClyLWgkWIlY3M2dYckgNgyfd1l-CMaAt040tqQ2RWKbhGfZX6Tj9dVYFj6MM/s573/atas.webp" alt="B OS screenshot - Debian-based open source Linux operating system for privacy and security" style="width:100%; max-width:600px; height:auto; background:transparent;">
-            <div style="font-size:1em; color:#666; margin-top:8px;"></div>
+            <div style="font-size:1em; color:#666; margin-top:8px;"><span style="color:#388e3c; font-weight:bold;">#DigitalFreedom</span> &nbsp;|&nbsp; <span style="color:#1976d2;">Solidarity for a free future</span></div>
         </div>
     </section>
     <section class="about-section" id="about" style="background:#fff; padding: 60px 5%; text-align:center;">
-        <h2 class="section-title">About B OS</h2>
+        <h2 class="section-title">Why is B OS Different?</h2>
         <div style="max-width:800px; margin:0 auto; color:#444; font-size:1.08rem;">
             <p>
-                B OS is a Debian-based Linux distribution built to give you more than just an operating system—it gives you freedom. Powered by the KDE desktop environment, B OS is designed to be Beautiful, Effective, and Efficient (BEE), delivering a balance of speed, simplicity, and style.
+                B OS was born from the spirit of resistance and solidarity. We believe technology should liberate, not oppress. In a world full of surveillance and restrictions, B OS is a tool for digital empowerment—for those who want to stay free, protect their privacy, and support the rights of all people to access technology without fear.
             </p>
             <p>
-                With B OS, your privacy is respected, your system stays fast, and your desktop remains intuitive. Whether you are studying, coding, designing, or simply browsing, B OS adapts to your workflow while keeping everything under your control.
+                With B OS, you get more than a beautiful and efficient operating system—you become part of a global movement for freedom and justice. Every line of code is a statement for a more open, safe, and humane world.
             </p>
             <p>
-                Open source at its core, B OS is not just software—it’s a statement of independence. It empowers you to create, to explore, and to own your digital life without compromise.
+                <b>Join us. Make technology a tool for freedom, not control.</b>
             </p>
         </div>
     </section>
@@ -218,7 +218,7 @@
     <section class="slogan-section">
         <div class="slogan animate">
             <span>
-                <strong>B OS is your secure, open source platform for learning, productivity, and digital freedom. Empower yourself and your community with Linux.</strong>
+                <strong>B OS: Technology for Freedom, Solidarity, and a Just Future. Empower yourself and your community. #DigitalFreedom</strong>
             </span>
         </div>
     </section>
@@ -229,9 +229,58 @@
                 Download the latest B OS ISO for free and enjoy a secure, privacy-focused Linux experience. Perfect for laptops, desktops, and workstations.
             </p>
             <br>
-            <a href="https://sourceforge.net/projects/merdekasoft/files/latest/download" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:1.2rem;">
-                <img alt="Download B OS Linux ISO" src="https://a.fsdn.com/con/app/sf-download-button" width="276" height="48" srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x">
+            <a href="https://sourceforge.net/projects/merdekasoft/files/latest/download" target="_blank" rel="noopener" class="hexagon-btn download-hexagon-btn">
+                <span class="hexagon-btn-inner"><i class="fas fa-download"></i> Download now</span>
             </a>
+            <style>
+            .hexagon-btn {
+                display: inline-block;
+                position: relative;
+                width: 276px;
+                height: 48px;
+                background: transparent;
+                text-decoration: none;
+                margin-bottom: 1.2rem;
+            }
+            .hexagon-btn .hexagon-btn-inner {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-weight: bold;
+                font-size: 1.08rem;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+            .hexagon-btn:before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: linear-gradient(90deg, #1e90ff 0%, #00c6a7 100%);
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                z-index: 1;
+                transition: filter 0.2s, box-shadow 0.2s;
+                box-shadow: 0 2px 12px rgba(30,144,255,0.15);
+            }
+            .hexagon-btn:hover:before {
+                filter: brightness(1.15) saturate(1.2);
+                box-shadow: 0 4px 24px rgba(30,144,255,0.25);
+            }
+            .hexagon-btn .fas {
+                margin-right: 0.5em;
+            }
+            @media (max-width: 400px) {
+                .hexagon-btn {
+                    width: 98vw;
+                    min-width: 0;
+                }
+            }
+            </style>
             <p>
                 <b>How to use:</b> Try B OS in Live Mode or install it for full control.<br>
                 <b>Dual Boot:</b> Install B OS alongside Windows, macOS, or other Linux distributions.<br>
