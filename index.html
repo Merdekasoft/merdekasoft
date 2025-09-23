@@ -68,6 +68,65 @@
             </p>
         </div>
     </section>
+    <!-- B OS 14 Beta Announcement Section -->
+    <section class="bos14-announcement" style="background:#f7fafc; padding: 60px 5%; text-align:center; border-bottom:1px solid #eee;">
+        <h2 class="section-title" style="color:#1976d2;">Announcing B OS 14 Beta</h2>
+        <div style="max-width:900px; margin:0 auto; color:#333; font-size:1.08rem; text-align:left; background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:32px 24px;">
+            <p><b>B OS 14 Beta</b> introduces several innovations that make B OS unique:</p>
+            <ul style="margin-left:1.2em;">
+                <li><b>Xdeb</b> – a new package format developed exclusively for B OS. Unlike Snap, Flatpak, or AppImage, Xdeb is not only for desktop applications but also for drivers and low-level system components, making it easier to handle hardware compatibility and offline installations.</li>
+                <li><b>Efficient storage</b> – Xdeb uses shared libraries, resulting in smaller installations compared to Snap, Flatpak, or AppImage, which often bundle redundant dependencies.</li>
+                <li><b>PackageWizard</b> – the official graphical installer for .xdeb packages, supporting both online and offline use.</li>
+                <li><b>IndoSetup</b> – a developer tool inspired by Inno Setup and InstallBuilder, enabling developers to easily create .xdeb packages for B OS.</li>
+            </ul>
+            <p>We believe Xdeb fills a gap left by other universal packaging formats:</p>
+            <div style="overflow-x:auto;">
+                <table style="width:100%; border-collapse:collapse; margin:18px 0; font-size:0.98em;">
+                    <thead>
+                        <tr style="background:#e3eafc;">
+                            <th style="padding:8px 12px; border:1px solid #ddd;">Format</th>
+                            <th style="padding:8px 12px; border:1px solid #ddd;">Scope</th>
+                            <th style="padding:8px 12px; border:1px solid #ddd;">Dependency Handling</th>
+                            <th style="padding:8px 12px; border:1px solid #ddd;">Offline Support</th>
+                            <th style="padding:8px 12px; border:1px solid #ddd;">Drivers/Low-level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Snap</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Apps only</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Bundled, redundant</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Limited</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Rarely</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Flatpak</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Apps only</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Bundled, sandboxed</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Limited</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">No</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">AppImage</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Apps only</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">No dependency mgmt</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">Yes</td>
+                            <td style="padding:8px 12px; border:1px solid #ddd;">No</td>
+                        </tr>
+                        <tr style="background:#e8f5e9; font-weight:bold;">
+                            <td style="padding:8px 12px; border:1px solid #388e3c;">Xdeb (B OS)</td>
+                            <td style="padding:8px 12px; border:1px solid #388e3c;">Apps &amp; drivers</td>
+                            <td style="padding:8px 12px; border:1px solid #388e3c;">Shared libraries</td>
+                            <td style="padding:8px 12px; border:1px solid #388e3c;">Yes</td>
+                            <td style="padding:8px 12px; border:1px solid #388e3c;">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top:1.2em;">By contrast, <b>Xdeb</b> supports both applications and drivers, works offline, and remains efficient thanks to shared libraries.</p>
+            <p style="margin-top:1.2em;">With KDE as its desktop environment, B OS continues to focus on usability for education, government, and productivity scenarios.</p>
+        </div>
+    </section>
     <section class="features" id="fitur">
         <h2 class="section-title">Key Features of B OS Linux</h2>
         <div class="features-grid">
